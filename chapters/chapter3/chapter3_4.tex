@@ -1,0 +1,39 @@
+\section{Szenarien}\label{sec:szenarien}
+Im Folgenden werden drei Szenarien beschrieben die verschiedene Komplexität aufweisen und verschiedene Anforderungen gegenüber flowws stellen. Alle Szenarios bilden simple Situationen ab, welche in flowws modelliert werden sollen. Die Szenarios versuchen die Problemstellungen von (kap) aufzugreifen um dadurch zu Erfahren, wie flowws damit umgehen würde und welche Vor- und Nachteile sich dadurch abzeichnen. Des Weiteren dienen di Szenarios später zur Verifikation der Funktionstüchtigkeit von flowws und zu einem gewissen Grad zum Nachweis des Erreichens der Ziele. 
+
+\subsection{Szenario S\#1: Lichtschalter}
+Im ersten und einfachsten Szenario wird soll eine zeitgesteuerte Lampe ein und ausgeschaltet werden. Hierbei kommen zwei cBlocks zum Einsatz: ein Taster-cBlock und ein LED-cBlock. Der Ablauf ist wie folgt:
+\begin{enumerate}
+    \item Die Lampe startet initial in einem ausgeschalteten Zustand
+    \item Der Nutzer betätigt ein Taster des Taster-cBlocks
+    \item Der LED-cBlock leuchtet auf
+    \item Nach eine vorbestimmten Zeitspanne schaltet sich LED-cBlock ab
+    \item Bei nochmaliger Betätigung des Taster-cBlocks springe zum zweiten Schritt
+\end{enumerate}
+In diesem Szenario ist es die grundsätzliche Funktionsweise von flowws zu illustrieren. Hierfür wird ein sequentielle Abfolge von Aktionen, welche durch ein Event (Benutzerinteraktion) getriggert werden, durchgeführt. Zusätzlich erlaubt dieses Beispiel die Verständlichkeit und Benutzbarkeit des Konzepts von flowws am Endnutzer auf einem grundlegenden Level zu testen.
+
+\subsection{Szenario S\#2: Ampelschaltung}
+Das zweite Szenario stellt eine Ampel mit Füßgängerübergang vor. Hier kommen drei cBlocks vor: ein Taster, welcher die Fußgängerampel betätigt und zwei LED-cBlocks, welche die Ampeln symbolisieren. Der Ablauf wird im Folgenden beschrieben: 
+\begin{enumerate}
+    \item Verkehrsampel steht initial auf Grün - Fußgängerampel auf Rot
+    \item Der Nutzer betätigt ein Taster des Taster-cBlocks
+    \item Verkehrsampel schaltet nach X Sekunden auf Gelb
+    \item Verkehrsampel schaltet nach X Sekunden auf Rot
+    \item Fußgängerampel schaltet nach X Sekunden auf Grün
+    \item Fußgängerampel schaltet nach X Sekunden auf Rot
+    \item Verkehrsampel schaltet nach X Sekunden auf Grün
+    \item Bei nochmaliger Betätigung des Taster-cBlocks springe zum zweiten Schritt
+\end{enumerate}
+Dieses etwas größere Szenario erweitert die Komplexität im Vergleich zu S\#1 um Interaktuator-Kommunikation. Die beiden Aktuatoren müssen sich hierbei über ihren momentanen Zustand (State) austauschen. Ähnlich wie S\#1 elaboriert auch dieses Szenario die Funktionalität und Ausdrucksstärke von flowws.
+
+\subsection{Szenario S\#3: Terrarium}
+Im dritten und letzten Szenario wird ein intelligentes Terrarium beschrieben welches auf Umgebungstemperatur und Feuchtigkeit reagiert und dem Nutzer über eine LED Hinweise über den Zustand liefert. Zusätzlich steuert ein Taster die Beleuchtung innerhalb des Terrariums, indem er ein öffnen des Terrariums detektiert. In Summe werden drei cBlocks benötigt: zwei LED-cBlocks, ein Temperatur/Feuchtigkeits-Sensor-cBlock und ein Taster cBlock.
+\begin{enumerate}
+    \item Wenn Temperatur $>30^{\circ}C$ dann lass LED-Rot aufleuchten
+    \item Wenn Luftfeuchtigkeit $>80$ dann lass LED-Blau aufleuchten
+    \item Wenn Klappe geöffnet wird löse Taster aus
+    \item Wenn Taster aufgelöst dann stelle LED-Block auf 100\% Helligkeit
+    \item Wenn Klappe geschlossen wird löse Taster aus
+    \item Wenn Taster ausgelöst dann stelle LED-Block auf 0\% Helligkeit
+\end{enumerate}
+Dieses dritte Szenario die Verbindung von Event-fokusierter Programmierung von Verhalten mit sequentiellem Verhalten. Während die Signal-LED konstant auf asynchrone, aperiodische Events wartet ist die Beleuchtung durch die Öffnung des Terrariums eine sequentielle. Auch die Fähigkeit der Priorisierung von Signalen muss flowws hierbei unter Beweis stellen. Ebenfalls wie S\#1 und S\#2 versucht dieses Szenario Aufschluss über die Aussagekraft und Verständlichkeit von flowws gegenüber der Steakholder zu liefern.

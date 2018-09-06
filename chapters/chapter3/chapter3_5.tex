@@ -1,0 +1,111 @@
+\section{Anforderungen}
+Diese Sektion handelt über die funktionalen und nicht-funktionalen Anforderungen an flowws. Da es sich bei flowws um eine Konzeptarbeit und Machbarkeitstudia handelt, wird der Fokus auf nicht-funktionale Anforderungen, welche Bedingungen an Benutzbarkeit, Transparenz und an die in (kap) beschriebenen Cognitive Dimensions stellen. 
+
+\subsection{Funktionale Anforderungen}\label{subsec:fanf}
+\begin{table}[H]
+\caption{Funktionale Anforderungen}
+\label{tab:fanf}
+\begin{tabularx}{\textwidth}{llX}
+\hline
+\rowcolor[HTML]{EFEFEF}
+ID    & Name                       & Beschreibung \\ \hline
+FA\#1 & Vergleichsoperationen      & Verechnung von reellwertigen Signalen durch ($<,\leq,=,\neq,\geq,>$) möglich. \\ \hline
+FA\#2 & Bool'sche Operationen      & Verechnung von bool'schen Signalen durch ($\neg, \land, \lor, \oplus$) möglich. \\ \hline
+FA\#3 & Zeitgestauerte Operationen & Zeitliche Manipulation von Signalen durch Verzögerung \\ \hline
+FA\#4 & Auslesen von Sensordaten   & Kontinuierliches Auslesen von Sensordaten zur Weiterverarbeitung \\ \hline
+FA\#5 & Ansteuern von Aktuatoren   & Ansteuern von Aktuatoren und Auslesen deren Zustände \\ \hline
+FA\#6 & Konvertierung von Signalen & Konvertierung zwischen verschiedenen Wertebereichen (bspw. $\left [ 0;1,0 \right ] \rightarrow \left [ 10;37 \right ]$) \\ \hline
+\end{tabularx}
+\end{table}
+
+\subsection{Nicht-funktionale Anforderung}
+
+\subsubsection{Verständlichkeit}
+\begin{table}[H]
+\caption{NFN \#0}
+\label{tab:nfn0}
+\begin{tabularx}{\textwidth}{lX}
+\hline
+\rowcolor[HTML]{EFEFEF} 
+NFN\#0        & Nichtfunktionale Anforderung \#0 \\ \hline
+Name          & Paralleles und sequentielles Verhalten begreifbar machen \\ \hline
+Beschreibung  & flowws ermöglicht dem Endnutzer ein Verständnis von parallelen aperiodischen Ereignissen und sequentiellen Vorgängen zu erlangen. \\ \hline
+Rationale     & Parallele Programmierung ist selbst für Experten ein kognitiv anstrengender Prozess, allerdings unabdingbar für den asynchronen, aperiodischen Kontext von cBlocks. Gleichzeitig benötigt der Endnutzer ein solides Paradigma um sequentielle Steuerung von bspw. Aktuatoren zu garantieren. \\ \hline
+Fit-Kriterium & Zur Erfüllung der Anforderung muss ein Endnutzer in wenigen Stunden das parallele und sequentielle Verhalten von fertigen Programmen gedeutet werden kann und später auch modifiziert werden kann.\\ \hline
+\end{tabularx}
+\end{table}
+
+
+\begin{table}[H]
+\caption{NFN \#1}
+\label{tab:nfn1}
+\begin{tabularx}{\textwidth}{lX}
+\hline
+\rowcolor[HTML]{EFEFEF} 
+NFN\#1        & Nichtfunktionale Anforderung \#1\\ \hline
+Name          & Daten/State/Verhalten sichtbar machen\\ \hline
+Beschreibung  & Für den Endnutzer sollen die Daten, welche das Programm verwenden, der State indem sich das Programm befindet und das Zukünftige verhalten dynamisch sichtbar sein.\\ \hline
+Rationale     & Programmcode im IoT ist normalerweise statischer Text, welcher nach einer Inspektion durch den Nutzer kompiliert und vom Computer ausgeführt wird. Der (Nicht-) Erfolg kann dann vom  Nutzer beurteilt werden. Diese Programmierungsprozess ist Gewöhnungsbedürftig, da Menschen visuell denken. Eine Darstellung von Daten, Zustand und Verhalten kann die Ausführung eines Programms für Novizen vereinfachen \\ \hline
+Fit-Kriterium & Wenn Daten/State/Verhalten in einer Weise sichtbar sind, in der es für den Endnutzer den Sinn eines Programms in kurzer Zeit erklärlich ist.\\ \hline
+\end{tabularx}
+\end{table}
+
+\subsubsection{Erlernbarkeit}
+\begin{table}[H]
+\caption{NFN \#2}
+\label{tab:nfn2}
+\begin{tabularx}{\textwidth}{lX}
+\hline
+\rowcolor[HTML]{EFEFEF} 
+NFN\#2        & Nichtfunktionale Anforderung \#2 \\ \hline
+Name          & Schneller erlernbar als Standard-IoT-Programmiersprachen \\ \hline
+Beschreibung  & flowws soll für den fachfremden Endnutzer (bspw. Laura) schneller erlernbar sein, als übliche Programmiersprachen, die im IoT Bereich eingestetzt werden (bspw. C)\\ \hline
+Rationale     & Sprachen die im Embedded Bereich verwendet werden haben eine äußerst Steile lernkurve. Oftmals müssen komplexe Paradigmen wie Speicherverwaltung oder Parallelität über Monate trainiert werden bevor man effektiv Arbeiten kann. \\ \hline
+Fit-Kriterium & Wenn Laura an einem Tag lernt die Grundzüge von flowws deuten, nach einer Woche ein vorgefertigtes Szenario programmieren und nach einem Monat ihre eigenen Szenarios entwickeln kann, ist die einfach Erlernbarkeit von flowws nachgewiesen. \\ \hline
+\end{tabularx}
+\end{table}
+
+\subsubsection{Bedienbarkeit}
+\begin{table}[H]
+\caption{NFN \#3}
+\label{tab:nfn3}
+\begin{tabularx}{\textwidth}{lX}
+\hline
+\rowcolor[HTML]{EFEFEF} 
+NFN\#3        & Nichtfunktionale Anforderung \#3 \\ \hline
+Name          & Schnelle und Flexible Programmierung \\ \hline
+Beschreibung  & Die Programmierung von funktionalen Prototypen soll bei kleineren Prototypen leicht von der Hand gehen und unkompliziert modifizierbar sein. \\ \hline
+Rationale     & (Funktionale) Prototypen stellen oftmals ein Teilsystems einer größeren Komponente dar. Aus diesem Grund ist das vergleichsweise langwierige Aufsätzen von IoT Software-Projekten zu aufwändig, dies verringert die dynamik innerhalb der Prototypenentwicklung als Ganzes. \\ \hline
+Fit-Kriterium & Ein (funktionaler) Prototyp mit fünf oder weniger Sensoren/Aktoren sollte in wenigen Stunden programmierbar sein.   \\ \hline 
+\end{tabularx}
+\end{table}
+
+\subsubsection{Zuverlässigkeit/Fehlertoleranz}
+\begin{table}[H]
+\caption{NFN \#4}
+\label{tab:nfn4}
+\begin{tabularx}{\textwidth}{lX}
+\hline
+\rowcolor[HTML]{EFEFEF} 
+NFN\#4        & Nichtfunktionale Anforderung \#4 \\ \hline
+Name          & Prävention von Übersetzungszeit-Fehlern \\ \hline
+Beschreibung  & Fehler sollen dadurch vermieden werden, dass bspw. ungeeignete Datentypen nicht miteinander verrechnet werden können. \\ \hline
+Rationale     & Viele EUDs erlauben es, ''kreativ'' mit dem verrechnen von Datentypen. In SAM Labs ist es bspw. möglich, integer mit boolean Daten  über logische Gatter miteinander zu verbinden. Ein solches Konstrukt macht logisch keinen Sinn und fordert unvorhergesehenes Verhalten geradzu heraus. \\ \hline
+Fit-Kriterium & Übersetzungszeitfehler (bspw. Typisierung) werden präventiv verhindert.   \\ \hline
+\end{tabularx}
+\end{table}
+
+\subsubsection{Änderbarkeit/Wartbarkeit}
+\begin{table}[H]
+\caption{NFN \#4}
+\label{tab:nfn4}
+\begin{tabularx}{\textwidth}{lX}
+\hline
+\rowcolor[HTML]{EFEFEF} 
+NFN\#5        & Nichtfunktionale Anforderung \#5 \\ \hline
+Name          & Erweiterung von flowws hinsichtlich Transducern/Sensoren/Aktuatoren \\ \hline
+Beschreibung  & Experten und Endnutzer können neue Transducer/Sensoren/Aktuatoren in flowws integrieren und ihre Funktionalitäten für andere Enduser bereitstellen. \\ \hline
+Rationale     & EUDs sind vorwiegend geschlossene Systeme. Sie wachsen nur vom Funktionsumfang wenn der Hersteller dies erlaubt. Das führt dazu, dass EUDs schnell an ihre Grenzen stoßen und als Produktivwerkzeug nicht mehr von Nutzen sind. flowws soll dieses Problem mindern, indem es dem Nutzern erlaubt den Funktionsumfang dynamisch zu erweitern. \\ \hline
+Fit-Kriterium & Wenn flowws durch Programmcode sich an neue, vorher nicht mögliche, Anforderungen anpassen kann ohne dass der Sourcecode angefasst werden muss, ist diese Anforderung erfüllt. \\ \hline
+\end{tabularx}
+\end{table}
