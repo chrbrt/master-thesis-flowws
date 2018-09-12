@@ -1,61 +1,65 @@
 \section{Vision und Ziel}
-Im folgenden werden die Vision für das zu Konzipierende \ac{EUD}-Werkzeug entwickelt welches sich an den Problemen von bestehenden Systemen (ka) und an den Bedürfnissen der Stakeholder (kap) orientieren. Die Vision für flowws beschreibt die gewählte mittel- bis langfristige Zukunft für ein Projekt und erlaubt es Designentscheidungen zu begründen und zu lenken. Die Vision für flowws lautet wie folgt:
+Die Vision hilft dabei, die Langzeitziele einer Software nicht aus den Augen zu verlieren (\cite{wiegers2013software}). Die Vision für flowws, beschreibt die gewählte mittel- bis langfristige Zukunft für das Projekt und erlaubt es, die Designentscheidungen zu begründen und zu lenken. Die Vision für flowws lautet wie folgt:
+\begin{quote}
+    \textit{flowws ist ein Werkzeug, das Designern ermöglicht sich in \ac{IoT} auszudrücken wie es ein Stift ihnen ermöglicht sich auf Papier auszudrücken; dadurch schnell, agil und ohne im Sumpf der Technologien zu versinken, funktionale Prototypen zu erstellen.}
+\end{quote}
 
-\textit{flowws ist ein Werkzeug, das Designern ermöglicht sich in \ac{IoT} auszudrücken wie es ein Stift ihnen ermöglicht sich auf Papier auszudrücken; dadurch schnell, agil und ohne im Sumpf der Technologien zu versinken, funktionale Prototypen zu erstellen.}
-
-Im folgenden werden Ziele des Projekts definiert, welche wenn erreicht, diese Vision umsetzen sollen. 
+Die mittelfristigen Ziele des Projekts, welche diese Vision umsetzen sollen, lauten wie folgt: 
 
 \begin{table}[H]
-\caption{Ziel \#1}
-\label{tab:ziel1}
+\caption{Ziel \#1: Ausdrucksstärke von flowws}
+\label{tab:ziel3}
 \begin{tabularx}{\textwidth}{lX}
 \hline
 \rowcolor[HTML]{EFEFEF} 
-Ziel \#1:     & Z\#1   \\ \hline
-Name          & Schnell zu erlernen \\ \hline
-Rationale     & IoT-Entwicklung benötigt ein immenses vertikales Wissen. Man benötigt Erfahrung in Hardware-naher Entwicklung, Programmiersprachen wie C,Basiskenntnisse in Elektrotechnik sowie Mikroelektronik nur um grundlegende Experimentedurchzuführen. Während cBlocks dass erlernen der elektrotechnischen Fähigkeiten erleichtertsoll flowws die Barriere für Programmierung in IoT-Szenarien erleichtern. \\ \hline
-Fit-Kriterium & Laura sollte es möglich sein in weniger als ein bis zwei Tagen die Grundlagen von flowws zu verstehen und schon nach wenigen Stunden das grundsätzliche Verhalten von bestehenden Projekten deuten können. \\ \hline
+Ziel \#1:     & Z\#1 \\ \hline
+Name          & Expressiv \\ \hline
+Rationale     & Ein Programm in flowws soll dem Endnutzer schnell verständigen, was sein Zweck und Verhalten ist. Programmcode in seiner rohen Form ist in seiner Aussagekraft stark Abhängig von der Sorgfalt des Erstellers. In IoT Projekten, wie denen von Laura und Mark arbeiten viele Personen kooperativ miteinander. Deshalb ist es Wichtig, dass ein Programm, sich so gut wie möglich selbst erklären kann. \\ \hline
+Fit-Kriterium & Laura und Mark sollen es beide möglich sein ein ihnen unbekanntes Programm innerhalb weniger Minuten (abh. von der Größe des Projekts) zu analysieren und eine zumindest wage Aussage treffen können über das Verhalten des Programms. \\ \hline
 \end{tabularx}
 \end{table}
 
 \begin{table}[H]
-\caption{Ziel \#2}
+\caption{Ziel \#2: Tempo bei der Entwicklung von Programmen}
 \label{tab:ziel2}
 \begin{tabularx}{\textwidth}{lX}
 \hline
 \rowcolor[HTML]{EFEFEF} 
 Ziel \#2:     & Z\#2 \\ \hline
-Name          & Schnell zu programmieren/modifizieren\\ \hline
-Rationale     & Programmierung in IoT-Szenarien artet aufgrund seiner parallelen Event-basierten Programmierstiels und seiner Abhängigkeit von physikalischen Ereignissen nicht selten in Trial-and-Error Vorgehen aus. Selbst minimale Modifikationen können zu unvorhergesehenen Verhalten führen. Aus diesem Grund ist schriftliche Programmierung in Situation bei denen mehrere Parteien in Kooperation arbeiten (bspw. Modifizierung von Code während eines Meeting) hinderlich. \\ \hline
-Fit-Kriterium & flowws sollte es dem Nutzer ermöglichen ähnlich Agil zu Programmieren wie der Design-Prozess selbst ist. Aus diesem Grund sollte flowws expermentelles Vorgehen unterstützen und dem Nutzer es ermöglichen (abhängig der Größe des Prototypen)  in ein bis zwei Tagen einen vorläufigen Prototyp zu erstellen. \\ \hline
+Name          & Schnell zu programmieren und zu modifizieren\\ \hline
+Rationale     & Programmierung in IoT-Szenarien artet aufgrund Komplexität, nicht selten in Trial-and-Error-Vorgehen aus. Selbst minimale Modifikationen können zu unvorhergesehenen Verhalten führen. Schnelle, expermental-getriebene Entwicklung soll mit flowws machbar sein.\\ \hline
+Fit-Kriterium & flowws unterstützt experimentelles Vorgehen des Nutzers. flowws erlaubt dem Nutzer in ein bis zwei Tagen einen vorläufigen Prototyp zu erstellen und in wenigen Minuten unterschiedliche Konfigurationen des Prototyps ausprobieren zu können. \\ \hline
 \end{tabularx}
 \end{table}
 
 \begin{table}[H]
-\caption{Ziel \#3}
-\label{tab:ziel3}
+\caption{Ziel \#3: Erlernbarkeit von flowws}
+\label{tab:ziel1}
 \begin{tabularx}{\textwidth}{lX}
 \hline
 \rowcolor[HTML]{EFEFEF} 
-Ziel \#1:     & Z\#3 \\ \hline
-Name          & Expressiv \\ \hline
-Rationale     & Es soll dem Nutzer schnell verständlich sein was ein Programm macht und wie es Das macht. Programmcode in seiner rohen Form ist Eindimensional und in seiner Aussagekraft stark Abhängig von der Domäne und der Sorgfallt des Erstellers. In IoT Projekten, wie denen von Laura und Mark arbeiten viele Personen kooperativ arbeiten. Hierbei ist es von Nöten dass ein Programm so gut wie möglich selbst erklären kann. \\ \hline
-Fit-Kriterium & Laura und Mark sollen es beide möglich sein ein ihnen unbekanntes Programm innerhalb weniger Minuten (abh. von der Größe des Projekts) zu analysieren und eine zumindest wage Aussage treffen können über das Verhalten des Programms. \\ \hline
+Ziel \#3:     & Z\#3   \\ \hline
+Name          & Schnell zu erlernen \\ \hline
+Rationale     & IoT-Entwicklung benötigt ein immenses vertikales Wissen. Man benötigt Erfahrung in Hardware-naher Entwicklung, Programmiersprachen wie C, Elektrotechnik und Mikroelektronik. Während cBlocks dass erlernen der elektrotechnischen Fähigkeiten erleichtert, soll flowws die Barriere für Programmierung in IoT-Szenarien erleichtern. \\ \hline
+Fit-Kriterium & Laura sollte es möglich sein, in weniger als ein bis zwei Tagen die Grundlagen von flowws zu verstehen und schon nach wenigen Stunden triviale Programme selbst beschreiben können. \\ \hline
 \end{tabularx}
 \end{table}
 
-\begin{table}[h]
-\caption{Ziel \#4}
+
+
+
+\begin{table}[H]
+\caption{Ziel \#4: ''\textit{Grow-as-you-go}''}
 \label{tab:ziel4}
 \begin{tabularx}{\textwidth}{lX}
 \hline
 \rowcolor[HTML]{EFEFEF} 
 Ziel \#4:     & Z\#4 \\ \hline
-Name          & Wächst mit dem Nutzer \\ \hline
-Rationale     & Viele EUDs sind auf eine eingeschränkte Domäne ausgelegt und daher, von ihrem Leistungsumfang stark begrenzt. Diese Einschränkungen sind für kreative Prozesse suboptimal und stoßen schnell an ihre funktionale Grenze. flowws soll durch Erweiterbarkeit und einen gut gewählten Grad an Allgemeingülltigkeit mit den Fähigkeiten mit den Fähigkeiten des Nutzer wachsen. \\ \hline
-Fit-Kriterium & Das Ziel ist erreicht, wenn eine Reihe von unterschiedlichen funktional unterschiedlichen Prototypen mit ein und dem selben Werkzeug (flowws) gebaut werden können. Des Weiteren soll Mark es möglich sein flowws um wiederverwendbare Funktionen und Elemente erweitern abh. von Lisas Spezifikationen erweitern kann.  \\ \hline
+Name          & flowws wächst mit den Fähigkeiten der Nutzer \\ \hline
+Rationale     & Viele \ac{EUD}-Systeme sind auf eine sehr eingeschränkte Domäne ausgelegt und daher, von ihrem Leistungsumfang stark begrenzt. Diese Einschränkungen sind für kreative Prozesse suboptimal. flowws soll durch gezielte Erweiterbarkeit in seiner Funktionalität mit den Fähigkeiten des Nutzer wachsen. \\ \hline
+Fit-Kriterium & Das Ziel ist erreicht, wenn es Mark und Lisa möglich ist, flowws um wiederverwendbare Funktionen und Elemente, zu erweitern.  \\ \hline
 \end{tabularx}
 \end{table}
 
-Ziel \#1-\#4 sind eine Dekomposition der Vision in einzelne verifizierbare Pakete. Es ist allerdings unrealisitsch, dass all diese Ziele innerhalb dieser Thesis abgearbeitet bzw. verifiziert werden können. Nichts desto trotz helfen die Ziele Anforderungen an das System zu stellen und Grundsätzliche Designentscheidungen zu begründen.
+Ziel \#1-\#4 sind eine Dekomposition der Vision in einzelne verifizierbare Pakete. Die Ziele helfen, Anforderungen an das System zu stellen und grundsätzliche Designentscheidungen zu begründen.
 

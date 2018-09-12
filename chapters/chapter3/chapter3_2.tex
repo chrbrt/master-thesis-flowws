@@ -1,38 +1,39 @@
-\section{Persona}
-Die Personas stellen die Verkörperung der End-User dar, welche die cBlocks und somit auch die \ac{EUD} verwenden sollen. Da \textit{flowws} als ein Teilsystem des cBlocks-Produkts entwickelt wird ist es sinnvoll die in [Volkers Thesis] beschriebene Persona aufzugreifen. Im folgenden werden zwei verschiedene Personas definiert, welche sich in der Komplexität ihrer Ziele und dem Ausmaße ihrer Expertisen und ihrem Charakter selbst unterscheiden.
+\section{Persona}\label{sec:persona}
+Personas stellen die Verkörperung der Endnutzers dar, welche die cBlocks und somit auch die \ac{EUD} verwenden sollen. Da \textit{flowws} als ein Teilsystem des cBlocks-Produkts entwickelt wird ist es sinnvoll, die in \cite{weckbach2018cblocks} beschriebene Persona aufzugreifen. Im Folgenden werden zwei verschiedene Personas definiert, welche sich in der Komplexität ihrer Ziele, der Größe ihrer Expertisen und ihrem Charakter unterscheiden.
 
-\begin{tcolorbox}[title={Laura, 24, UX-Designerin},toptitle=3mm,bottomtitle=3mm, bicolor ,sidebyside,righthand width=3cm, sharp corners, boxrule=.4pt, colback=green!5, colbacklower=green!5]
-    ''\textit{Ich möchte meine Gedanken so schnell, wie möglich greifbar machen}''
-    \\
+\begin{tcolorbox}[title={Persona \#1, Laura, 24, UX-Designerin},toptitle=3mm,bottomtitle=3mm, bicolor ,sidebyside,righthand width=3cm, sharp corners, boxrule=.4pt, colback=green!5, colbacklower=green!5, label=personalaura]
+\begin{quote}
+    ''\textit{Ich möchte meine Gedanken so schnell wie möglich greifbar machen.}''
+\end{quote}
     \textbf{Ziele:} 
-    
     \setlist[1]{itemsep=-5pt}
     \begin{itemize}
         \item Arbeit produktiv verbringen, anstatt Werkzeuge zu erlernen
-        \item Erstellung von Gadgets für den privaten Gebrauch
-        \item Erprobung von Benutzerfreundlichkeit von \textit{Smart-Device}-Prototypen
+        \item Erstellung von \textit{Gadgets} für den privaten Gebrauch
+        \item Erprobung der Benutzerfreundlichkeit von \textit{Smart-Device}-Prototypen
     \end{itemize}
     \textbf{Expertise:} 
     \setlist[1]{itemsep=-5pt}
     \begin{itemize}
-        \item UX-Design Prinzipien, graphische Konzeptualisierung
+        \item \ac{UX}-Design Prinzipien, graphische Konzeptualisierung
         \item Design-Thinking, Double Diamond, etc.
         \item Paper-Prototyping, Wizard-of-Oz, etc.
         \item Photoshop, Illustrator, Sketch, etc.
-        \item Basiswissen in Arduino/C-, Javascript
+        \item Basiswissen in Arduino/C, Javascript
     \end{itemize}
     
-    
     \tcblower
+    
     \includegraphics[width=\linewidth]{bilder/chapter3/laura.png}
 \end{tcolorbox}
-Die zwei maßgeblichen Stakeholder im ''PROFI'' ist Laura und Mark. Ihre Gemeinsamkeit ist, dass sie in der selben Consulting-Firma angestellt sind, welche sich darauf spezialisiert hat für Drittfirmen Case-Studies im Bereich Produktentwicklung zu erstellen. Beider Berufsalltag besteht darin moderne Design-Methoden wie Beispielsweise Design-Thinking auf Probleme, mit denen Industriefirmen an die Firma herantreten, anzuwenden. Die Arbeit besteht hierbei aus kurzen Entwicklungszyklen in denen iterative Prototypen gebaut werden. Hierbei arbeiten beide Parteien Hand-in-Hand um über mehrere Iterationszyklen einen finalen Produktprototypen zu erstellen. Beide sind hierbei mit dem Vorgehen in den Design-Prozessen vollstens vertraut.
+Die zwei maßgeblichen Stakeholder des Projekts sind Laura (Persona \#1) und Mark (Persona \#2). Ihre Gemeinsamkeit ist, dass sie in der selben Consulting-Firma angestellt sind, welche sich darauf spezialisiert hat, für Drittfirmen Case-Studies im Bereich Produktentwicklung zu erstellen. Der Berufsalltag beider besteht darin, moderne Design-Methoden wie Design-Thinking auf Probleme von Industriefirmen anzuwenden. Die Arbeit besteht hierbei aus kurzen Entwicklungszyklen, in denen mehrere Prototypen gebaut werden. Hierbei arbeiten beide Personas Hand-in-Hand um über mehrere Iterationszyklen hinweg, um einen finalen Produktprototypen zu erstellen.
 
-Der Unterschied beider Personas sind die Pain-Points, Ziele und Expertiesen der beiden Personas. Während Laura ihre Erfahrung in User Experience die Entwicklung von Produkt-Hardware einfließen lässt, ist Markus Hintergrund entgegengesetzt; er lässt seine Erfahrung in Elektrotechnik und Embedded-Entwicklung auf das Produkt Design einfließen. Beide Personas arbeiten somit im Tandem um UX und Hardware miteinander zu verschmelzen. Lauras größter Pain-Point hierbei ist, dass ein schnelles Iterieren von funktionalen Prototypen durch die enorme vertikale Komplexität von Embedded-Hardware gehemmt wird. Obwohl sie Grundsätzliche Erfahrung mit Arduino besitzt, können selbst (augenscheinlich) geringfügige Änderungen zu kryptischen Fehlern und unvorhergesehenen Verhaltensweisen des Prototypen führen. Hierbei assistiert Mark, ein Creative Technologist, der sich um 
+Der Unterschied beider Personas sind ihre Pain-Points, Ziele und Expertiesen. Laura lässt ihre Erfahrung in User Experience in die Entwicklung von Produkt-Hardware einfließen. Markus Hintergrund ist technischer Natur. Er lässt seine Erfahrung in Elektrotechnik und Embedded-Entwicklung auf das Produkt Design einfließen. Beide Personas arbeiten somit im Tandem, um \ac{UX} und Hardware miteinander zu verschmelzen. Lauras größter Pain-Point hierbei ist, dass ein iteratives Entwickeln von funktionalen Prototypen, durch die enorme technische Komplexität von Embedded-Hardware gehemmt wird. Obwohl sie Grundsätzliche Erfahrung mit Arduino besitzt, können selbst geringfügige Änderungen zu kryptischen Fehlern und unvorhergesehenen Verhaltensweisen des Prototypen führen. Hierbei assistiert Mark, ein Creative Technologist, der sich um 
 
-\begin{tcolorbox}[title={Mark, 28, Creative Technologist},toptitle=3mm,bottomtitle=3mm, bicolor ,sidebyside,righthand width=3cm, sharp corners, boxrule=.4pt, colback=green!5, colbacklower=green!5]
-    ''\textit{Mehrmals den selben Code schreiben ist leider Alltag}''
-    \\
+\begin{tcolorbox}[title={Persona \#2, Mark, 28, Creative Technologist},toptitle=3mm,bottomtitle=3mm, bicolor ,sidebyside,righthand width=3cm, sharp corners, boxrule=.4pt, colback=green!5, colbacklower=green!5]
+    \begin{quote}
+        ''\textit{Mehrmals den selben Code schreiben ist leider Alltag}''
+    \end{quote}
     \textbf{Ziele:} 
     \setlist[1]{itemsep=-5pt}
     \begin{itemize}
@@ -51,6 +52,6 @@ Der Unterschied beider Personas sind die Pain-Points, Ziele und Expertiesen der 
     \includegraphics[width=\linewidth]{bilder/chapter3/mark.png}
 \end{tcolorbox}
 
-die technische Implementierung der Anforderungen in dem er elektronische Komponenten zusammenstellt, die benötigte Software aufsetzt, Leiterplattendesign erstellt und komplexe Programmlogik schreibt. Für ihn ist es frustrierend, wenn er viel Zeit in immer wiederkehrende Aufgaben wie das Aufsetzen von generischen Hardwareblöcken investieren muss. Allein das Set-Up von kleinen funktionalen Prototypen mit nur wenigen Teilen kann inklusive Design, Erstellung und Fehlerkorrektur einen Tag und länger in Anspruch nehmen. Mark würde sich viel lieber mit der Entwicklung von komplexeren Systemen beschäftigen, Laura auf der anderen Seite wäre lieber unabhängiger von Mark und sich auf die Erprobung funktionaler bzw. medium-fidelity Prototypen fokussieren zu können ohne im Sumpf von Elektronik und Software-Debugging zu versinken. Kommunikation bzw. der Austausch von fachlichen Informationen zwischen den beiden Personas ist ein klares Probl
+die technische Implementierung der Anforderungen kümmert. Seine Arbeit besteht darin, geeignete elektronische Komponenten zusammenszutellen, die benötigte Software aufzusetzen, Leiterplatten zu entwerfen und komplexe Programmlogik zu schreiben. Für ihn ist es frustrierend, wenn er viel Zeit in immer wiederkehrende Aufgaben, wie das Aufsetzen von generischen Hardwareblöcken, investieren muss. Alleine das Aufsetzen von kleinen funktionalen Prototypen mit nur wenigen Teilen kann durch Design, Erstellung und Fehlerkorrektur von Programmcode, mehr als einen Tag in Anspruch nehmen. Mark würde sich viel lieber mit der Entwicklung von komplexeren Systemen beschäftigen. Laura auf der anderen Seite, wäre es lieber, unabhängiger von Mark zu sein und sich auf die Erprobung funktionaler Prototypen fokussieren zu können, ohne viel Zeit für Elektronik und Software-Debugging zu verschenken. Kommunikation bzw. der Austausch von fachlichen Informationen zwischen den beiden Personas spielt hierbei eine Rolle.
 
-Das ''Profi''-Projekt, cBlocks und in folge dessen flowws hat zum Ziel, die Pain-Points der Personas zu mildern in dem sie auf ihre fachlichen Stärken bauen. 
+Das Ziel von ''Profi''-Projekt, cBlocks und in Folge dessen, flowws ist es, die Pain-Points der Personas zu mildern, indem sie auf ihre fachlichen Stärken bauen. 

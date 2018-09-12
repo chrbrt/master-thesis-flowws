@@ -1,4 +1,4 @@
-\section{Graphisches Modell}
+\section{Graphisches Modell}\label{sec:graphischesmodell}
 Im vorherigen Kapitel wurde das grundlegende Programmierungskonzept von flowws erklärt und anhand der Anforderungen gegenüber dem System sowie anhand der Probleme bestehender Systeme begründet. Wie allerdings schon in der Einleitung (Kapitel \ref{sec:einleitungkonzept}) geschrieben, benötigt die \ac{EUD} eine graphische Oberfläche, mit welcher der Endnutzer interagieren kann. Auch hier werden Entscheidungen anhand von Anforderungen, Probleme und \textit{Best-Practice-Frameworks} wie \ac{CD} rationalisiert.
  
 \subsection{Design Richtlinien}
@@ -226,7 +226,7 @@ Das Modellieren des Graphen in flowws ist äquivalent mit dem Programmieren von 
 \end{figure}
 Die Funktionsknoten sind die einzigen Knoten, die in ihrer Existenz nicht an ein physisches Pendant gebunden sind. Aus diesem Grund, werden sie manuell vom Nutzer erstellt und gelöscht. Die Erstellung von Funktionsknoten geschieht mit Hilfe des Radialmenüs. Ein Funktionsblock kann wie in Abbildung [ref] gezeigt ist auf zwei Weisen erstellt werden: Kontextsensitiv und Kontextunabhängig. \textbf{Kontextunabhängig} können Funktionsknoten auf der ganzen Arbeitsfläche erzeugt werden. Der Benutzer ruft das Radialmenü auf und wählt den gewünschten Knoten aus. \textbf{Kontextsensitiv} ist das Radialmenü Knoten wenn der Endnutzer gerade eine Verbindung erstellt. In diesem Fall, zeigt das Radialmenü nur Optionen an, die für die zu erstellende Verbindung relevant sind. Erstellt der Nutzer bspw. eine Verbindung, die als Quelle den Temperatursensor hat, zeigt das Radialmenü nur Funktionsknoten an, die mit \textit{Number}-Werten (sprich Temperaturwerten) umgehen können. Für den Endnutzer wird der Erstellungsprozess dadurch übersichtlicher, schneller und weniger fehleranfällig.
 
-\subsubsection{Erstellen von \ac{FSM}}
+\subsubsection{Erstellen von \ac{FSM}}\label{FSMkreieren}
 
 
 \begin{figure}[h]

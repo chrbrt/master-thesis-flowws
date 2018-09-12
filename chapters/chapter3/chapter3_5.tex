@@ -1,5 +1,5 @@
 \section{Anforderungen}
-Diese Sektion handelt über die funktionalen und nicht-funktionalen Anforderungen an flowws. Da es sich bei flowws um eine Konzeptarbeit und Machbarkeitstudia handelt, wird der Fokus auf nicht-funktionale Anforderungen, welche Bedingungen an Benutzbarkeit, Transparenz und an die in (kap) beschriebenen Cognitive Dimensions stellen. 
+Dieser Abschnitt handelt über die funktionalen und nicht-funktionalen Anforderungen von flowws. Da es sich bei flowws um eine Konzeptarbeit handelt, wird der Fokus auf nicht-funktionale Anforderungen gelgt, welche Bedingungen an Benutzbarkeit, Transparenz und an die in Kapitel \ref{tab:cognitivedimensions} beschriebenen Cognitive Dimensions stellen. 
 
 \subsection{Funktionale Anforderungen}\label{subsec:fanf}
 \begin{table}[H]
@@ -9,12 +9,13 @@ Diese Sektion handelt über die funktionalen und nicht-funktionalen Anforderunge
 \hline
 \rowcolor[HTML]{EFEFEF}
 ID    & Name                       & Beschreibung \\ \hline
-FA\#1 & Vergleichsoperationen      & Verechnung von reellwertigen Signalen durch ($<,\leq,=,\neq,\geq,>$) möglich. \\ \hline
-FA\#2 & Bool'sche Operationen      & Verechnung von bool'schen Signalen durch ($\neg, \land, \lor, \oplus$) möglich. \\ \hline
+FA\#1 & Vergleichsoperationen      & Verechnung von reellwertigen Daten durch ($<,\leq,=,\neq,\geq,>$) möglich. \\ \hline
+FA\#2 & Bool'sche Operationen      & Verechnung von bool'schen Daten durch ($\neg, \land, \lor, \oplus$) möglich. \\ \hline
 FA\#3 & Zeitgestauerte Operationen & Zeitliche Manipulation von Signalen durch Verzögerung \\ \hline
 FA\#4 & Auslesen von Sensordaten   & Kontinuierliches Auslesen von Sensordaten zur Weiterverarbeitung \\ \hline
-FA\#5 & Ansteuern von Aktuatoren   & Ansteuern von Aktuatoren und Auslesen deren Zustände \\ \hline
-FA\#6 & Konvertierung von Signalen & Konvertierung zwischen verschiedenen Wertebereichen (bspw. $\left [ 0;1,0 \right ] \rightarrow \left [ 10;37 \right ]$) \\ \hline
+FA\#5 & Ansteuern von Aktoren      & Ansteuern von Aktoren und Auslesen deren Zustände \\ \hline
+FA\#6 & Programmierung von Aktoren & Verhalten von Aktoren ist programmierbar \\ \hline
+FA\#7 & Konvertierung von Signalen & Konvertierung zwischen verschiedenen Wertebereichen (bspw. $\left [ 0;1,0 \right ] \rightarrow \left [ 10;37 \right ]$) \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -29,9 +30,9 @@ FA\#6 & Konvertierung von Signalen & Konvertierung zwischen verschiedenen Werteb
 \rowcolor[HTML]{EFEFEF} 
 NFN\#0        & Nichtfunktionale Anforderung \#0 \\ \hline
 Name          & Paralleles und sequentielles Verhalten begreifbar machen \\ \hline
-Beschreibung  & flowws ermöglicht dem Endnutzer ein Verständnis von parallelen aperiodischen Ereignissen und sequentiellen Vorgängen zu erlangen. \\ \hline
-Rationale     & Parallele Programmierung ist selbst für Experten ein kognitiv anstrengender Prozess, allerdings unabdingbar für den asynchronen, aperiodischen Kontext von cBlocks. Gleichzeitig benötigt der Endnutzer ein solides Paradigma um sequentielle Steuerung von bspw. Aktuatoren zu garantieren. \\ \hline
-Fit-Kriterium & Zur Erfüllung der Anforderung muss ein Endnutzer in wenigen Stunden das parallele und sequentielle Verhalten von fertigen Programmen gedeutet werden kann und später auch modifiziert werden kann.\\ \hline
+Beschreibung  & flowws ermöglicht dem Endnutzer, ein Verständnis von parallelen aperiodischen Ereignissen und sequentiellen Vorgängen, zu erlangen. \\ \hline
+Rationale     & Parallele Programmierung ist selbst für Experten ein kognitiv anstrengender Prozess. Sie ist allerdings unabdingbar für den asynchronen, aperiodischen Kontext von cBlocks. Gleichzeitig benötigt der Endnutzer ein solides Paradigma um sequentielle Steuerung von bspw. Aktoren zu verstehen. \\ \hline
+Fit-Kriterium & Ein Endnutzer muss in wenigen Stunden das parallele und sequentielle Verhalten von fertigen Programmen deuten und modifizieren können.\\ \hline
 \end{tabularx}
 \end{table}
 
@@ -42,11 +43,11 @@ Fit-Kriterium & Zur Erfüllung der Anforderung muss ein Endnutzer in wenigen Stu
 \begin{tabularx}{\textwidth}{lX}
 \hline
 \rowcolor[HTML]{EFEFEF} 
-NFN\#1        & Nichtfunktionale Anforderung \#1\\ \hline
-Name          & Daten/State/Verhalten sichtbar machen\\ \hline
-Beschreibung  & Für den Endnutzer sollen die Daten, welche das Programm verwenden, der State indem sich das Programm befindet und das Zukünftige verhalten dynamisch sichtbar sein.\\ \hline
-Rationale     & Programmcode im IoT ist normalerweise statischer Text, welcher nach einer Inspektion durch den Nutzer kompiliert und vom Computer ausgeführt wird. Der (Nicht-) Erfolg kann dann vom  Nutzer beurteilt werden. Diese Programmierungsprozess ist Gewöhnungsbedürftig, da Menschen visuell denken. Eine Darstellung von Daten, Zustand und Verhalten kann die Ausführung eines Programms für Novizen vereinfachen \\ \hline
-Fit-Kriterium & Wenn Daten/State/Verhalten in einer Weise sichtbar sind, in der es für den Endnutzer den Sinn eines Programms in kurzer Zeit erklärlich ist.\\ \hline
+NFN\#1        & Nichtfunktionale Anforderung \#1 \\ \hline
+Name          & Daten und State sichtbar machen \\ \hline
+Beschreibung  & Für den Endnutzer sollen die Daten, die das Programm verarbeitet und der Zustand indem sich das Programm befindet für den Endnutzer sichtbar sein. \\ \hline
+Rationale     & Programmcode ist normalerweise statisch. Diese Darstellung ist gewöhnungsbedürftig, da Menschen visuell denken. Eine Darstellung von Daten und Zustand kann die Ausführung eines Programms für Laien vereinfachen. \\ \hline
+Fit-Kriterium & Wenn Daten und Zustand in einer Weise sichtbar sind, dass das Verhalten eines Programms, in kurzer Zeit für den Endnutzer erklärlich ist. \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -58,10 +59,10 @@ Fit-Kriterium & Wenn Daten/State/Verhalten in einer Weise sichtbar sind, in der 
 \hline
 \rowcolor[HTML]{EFEFEF} 
 NFN\#2        & Nichtfunktionale Anforderung \#2 \\ \hline
-Name          & Schneller erlernbar als Standard-IoT-Programmiersprachen \\ \hline
-Beschreibung  & flowws soll für den fachfremden Endnutzer (bspw. Laura) schneller erlernbar sein, als übliche Programmiersprachen, die im IoT Bereich eingestetzt werden (bspw. C)\\ \hline
-Rationale     & Sprachen die im Embedded Bereich verwendet werden haben eine äußerst Steile lernkurve. Oftmals müssen komplexe Paradigmen wie Speicherverwaltung oder Parallelität über Monate trainiert werden bevor man effektiv Arbeiten kann. \\ \hline
-Fit-Kriterium & Wenn Laura an einem Tag lernt die Grundzüge von flowws deuten, nach einer Woche ein vorgefertigtes Szenario programmieren und nach einem Monat ihre eigenen Szenarios entwickeln kann, ist die einfach Erlernbarkeit von flowws nachgewiesen. \\ \hline
+Name          & Schneller erlernbar als gebräuchliche Programmiersprachen im \ac{IoT} \\ \hline
+Beschreibung  & flowws soll für den fachfremden Endnutzer schneller erlernbar sein, als übliche Programmiersprachen, die im IoT Bereich verwendet werden (bspw. C).\\ \hline
+Rationale     & Programmierprachen die im Embedded-Bereich verwendet werden, besitzen eine steile Lernkurve. Komplexe Paradigmen wie Speicherverwaltung oder Parallelität müssen über Monate trainiert werden, bevor man effektiv mit ihnen umgehen kann. \\ \hline
+Fit-Kriterium & Wenn Laura an einem Tag lernt die Grundzüge von flowws deuten, nach einer Woche ein vorgefertigtes Szenario programmieren und nach einem Monat ihre eigenen Szenarios entwickeln kann, gilt die einfache Erlernbarkeit von flowws als erwiesen. \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -73,39 +74,42 @@ Fit-Kriterium & Wenn Laura an einem Tag lernt die Grundzüge von flowws deuten, 
 \hline
 \rowcolor[HTML]{EFEFEF} 
 NFN\#3        & Nichtfunktionale Anforderung \#3 \\ \hline
-Name          & Schnelle und Flexible Programmierung \\ \hline
-Beschreibung  & Die Programmierung von funktionalen Prototypen soll bei kleineren Prototypen leicht von der Hand gehen und unkompliziert modifizierbar sein. \\ \hline
-Rationale     & (Funktionale) Prototypen stellen oftmals ein Teilsystems einer größeren Komponente dar. Aus diesem Grund ist das vergleichsweise langwierige Aufsätzen von IoT Software-Projekten zu aufwändig, dies verringert die dynamik innerhalb der Prototypenentwicklung als Ganzes. \\ \hline
-Fit-Kriterium & Ein (funktionaler) Prototyp mit fünf oder weniger Sensoren/Aktoren sollte in wenigen Stunden programmierbar sein.   \\ \hline 
+Name          & Schnelle modifzierung bestehender Programme unterstützen \\ \hline
+Beschreibung  & Bestehende Programme sollen nicht nur leicht erfassbar für den Endnutzer sein, sondern auch effizient modifizierbar sein. \\ \hline
+Rationale     &  Prototyping bedeutet experimentieren. Ein schnelles ändern der Programm-Parameter und Strukturen erlaubt es dem Endnutzer in möglichst wenigen Schritten verschiedene Versionen eines Programms auszuprobieren. Dadurch wird dem Endnutzer exploratives Entwickeln ermöglicht.\\ \hline
+Fit-Kriterium & Parameter und Strukturen des flowws-Programmes sind zur Laufzeit änderbar. \\ \hline 
 \end{tabularx}
 \end{table}
 
-\subsubsection{Zuverlässigkeit/Fehlertoleranz}
 \begin{table}[H]
 \caption{NFN \#4}
-\label{tab:nfn4}
+\label{tab:nfn5}
 \begin{tabularx}{\textwidth}{lX}
 \hline
 \rowcolor[HTML]{EFEFEF} 
 NFN\#4        & Nichtfunktionale Anforderung \#4 \\ \hline
 Name          & Prävention von Übersetzungszeit-Fehlern \\ \hline
-Beschreibung  & Fehler sollen dadurch vermieden werden, dass bspw. ungeeignete Datentypen nicht miteinander verrechnet werden können. \\ \hline
-Rationale     & Viele EUDs erlauben es, ''kreativ'' mit dem verrechnen von Datentypen. In SAM Labs ist es bspw. möglich, integer mit boolean Daten  über logische Gatter miteinander zu verbinden. Ein solches Konstrukt macht logisch keinen Sinn und fordert unvorhergesehenes Verhalten geradzu heraus. \\ \hline
-Fit-Kriterium & Übersetzungszeitfehler (bspw. Typisierung) werden präventiv verhindert.   \\ \hline
+Beschreibung  & flowws soll vermeidbare Fehler, wie Konflikte zwischen Datentypen, im Voraus unterbinden. \\ \hline
+Rationale     & Um zügig in der Programmierung voran zu kommen, ist es besser Fehler zu vermeiden ist besser als sie beheben zu müssen. \\ \hline
+Fit-Kriterium & Übersetzungszeitfehler (bspw. fehlerhafte Typisierung) werden präventiv verhindert.   \\ \hline
+
 \end{tabularx}
 \end{table}
 
+
+
+
 \subsubsection{Änderbarkeit/Wartbarkeit}
 \begin{table}[H]
-\caption{NFN \#4}
-\label{tab:nfn4}
+\caption{NFN \#5}
+\label{tab:nfn5}
 \begin{tabularx}{\textwidth}{lX}
 \hline
 \rowcolor[HTML]{EFEFEF} 
 NFN\#5        & Nichtfunktionale Anforderung \#5 \\ \hline
 Name          & Erweiterung von flowws hinsichtlich Transducern/Sensoren/Aktuatoren \\ \hline
 Beschreibung  & Experten und Endnutzer können neue Transducer/Sensoren/Aktuatoren in flowws integrieren und ihre Funktionalitäten für andere Enduser bereitstellen. \\ \hline
-Rationale     & EUDs sind vorwiegend geschlossene Systeme. Sie wachsen nur vom Funktionsumfang wenn der Hersteller dies erlaubt. Das führt dazu, dass EUDs schnell an ihre Grenzen stoßen und als Produktivwerkzeug nicht mehr von Nutzen sind. flowws soll dieses Problem mindern, indem es dem Nutzern erlaubt den Funktionsumfang dynamisch zu erweitern. \\ \hline
-Fit-Kriterium & Wenn flowws durch Programmcode sich an neue, vorher nicht mögliche, Anforderungen anpassen kann ohne dass der Sourcecode angefasst werden muss, ist diese Anforderung erfüllt. \\ \hline
+Rationale     & \ac{EUD}-Werkzeuge sind vorwiegend geschlossene Systeme. Sie wachsen nur vom Funktionsumfang wenn der Hersteller dies erlaubt. Das führt dazu, dass sie schnell an ihre Grenzen stoßen und als Produktivwerkzeug nicht mehr von Nutzen sind. \\ \hline
+Fit-Kriterium & Die Anforderung gilt als erfüllt, wenn flowws durch Programmcode sich an neue, vorher nicht mögliche, Anforderungen anpassen kann. Dies geschieht, ohne dass der Endnutzern den Sourcecode verändern muss. \\ \hline
 \end{tabularx}
 \end{table}

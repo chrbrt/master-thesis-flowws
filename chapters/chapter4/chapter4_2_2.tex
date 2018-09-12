@@ -49,7 +49,7 @@ Wenn sich eine Input-Schnittstelle durch ein eintreffendes Ereignis aktualisiert
  \end{itemize}
  Es können noch weitere vorgefertigte Funktionen definiert werden, allerdings würde dies den Rahmen dieser Arbeit hinausgehen und wäre nicht Zielführend, führ die Definition einer \ac{EUD}. Durch Funktionsblöcke mit selbstdefinierter Logik wird allerdings Funktionsblock vorgesehen, der es dem Endnutzer erlaubt, eigene Transformationslogik einzuprogrammieren und somit der \ac{EUD} erlaubt, jede beliebige Funktion ab zu bilden.
  
-\subsubsection{3. Eventkonsumierung}
+\subsubsection{3. Eventkonsumierung} \label{subsubsec:evebtkonsumierung}
 Mit dem Konsumieren der Events schließt sich der Kreis indem ein initiales physisches Phänomen, dass durch die Sensor-cBlocks aufgenommen wurde in einem neuen physischen Phänomen, dass vom Aktor-cBlock erzeugt wird (siehe Abbildung \ref{fig:beispielflowws}). 
 
 Jeder Aktor-cBlock, der mit flowws verbunden wird, ist ähnlich wie bei den Sensor-cBlocks mit einer virtuellen Abbild (hier Aktorblock) repräsentiert. Ein Aktorblock ist intern eine \ac{FSM} wie sie in Kapitel \ref{subsec:fsmprogrammierung} beschrieben. Hierbei werden vom Endnutzer Zustände, Übergänge und Übergangslogik definiert um dem Aktor ein gewünschtes Verhalten zu verabreichen.

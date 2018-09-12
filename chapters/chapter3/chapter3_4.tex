@@ -1,8 +1,8 @@
 \section{Szenarien}\label{sec:szenarien}
-Im Folgenden werden drei Szenarien beschrieben die verschiedene Komplexität aufweisen und verschiedene Anforderungen gegenüber flowws stellen. Alle Szenarios bilden simple Situationen ab, welche in flowws modelliert werden sollen. Die Szenarios versuchen die Problemstellungen von (kap) aufzugreifen um dadurch zu Erfahren, wie flowws damit umgehen würde und welche Vor- und Nachteile sich dadurch abzeichnen. Des Weiteren dienen di Szenarios später zur Verifikation der Funktionstüchtigkeit von flowws und zu einem gewissen Grad zum Nachweis des Erreichens der Ziele. 
+Szenarios erlauben es die Ziele eines Software-Systems und Stakeholder erzählerisch zu verbinden und somit die Anforderungen an ein System zu verdeutlichen (\cite{Lamsweerde2001scenario}). Im Folgenden werden drei Szenarien beschrieben, die verschiedene Komplexität aufweisen und verschiedene Anforderungen gegenüber flowws stellen. Die Szenarios versuchen die Problemstellungen von Kapitel \ref{sec:problemanalyse} aufzugreifen um dadurch zu Erfahren, wie flowws damit umgehen würde und welche Vor- und Nachteile sich dadurch abzeichnen. 
 
 \subsection{Szenario S\#1: Lichtschalter}
-Im ersten und einfachsten Szenario wird soll eine zeitgesteuerte Lampe ein und ausgeschaltet werden. Hierbei kommen zwei cBlocks zum Einsatz: ein Taster-cBlock und ein LED-cBlock. Der Ablauf ist wie folgt:
+Im ersten Szenario wird soll eine zeitgesteuerte Lampe ein und ausgeschaltet werden. Hierbei kommen zwei cBlocks zum Einsatz: ein Taster-cBlock und ein LED-cBlock. Der Ablauf ist wie folgt:
 \begin{enumerate}
     \item Die Lampe startet initial in einem ausgeschalteten Zustand
     \item Der Nutzer betätigt ein Taster des Taster-cBlocks
@@ -13,7 +13,7 @@ Im ersten und einfachsten Szenario wird soll eine zeitgesteuerte Lampe ein und a
 In diesem Szenario ist es die grundsätzliche Funktionsweise von flowws zu illustrieren. Hierfür wird ein sequentielle Abfolge von Aktionen, welche durch ein Event (Benutzerinteraktion) getriggert werden, durchgeführt. Zusätzlich erlaubt dieses Beispiel die Verständlichkeit und Benutzbarkeit des Konzepts von flowws am Endnutzer auf einem grundlegenden Level zu testen.
 
 \subsection{Szenario S\#2: Ampelschaltung}
-Das zweite Szenario stellt eine Ampel mit Füßgängerübergang vor. Hier kommen drei cBlocks vor: ein Taster, welcher die Fußgängerampel betätigt und zwei LED-cBlocks, welche die Ampeln symbolisieren. Der Ablauf wird im Folgenden beschrieben: 
+Das zweite Szenario stellt eine Ampel mit Fußgängerübergang dar. Das Szenario besteht aus drei \ac{cBlocks}: ein Taster-cBlock, welcher die Fußgängerampel betätigt und zwei LED-cBlocks, welche die Ampeln symbolisieren. Der Ablauf wird im Folgenden beschrieben: 
 \begin{enumerate}
     \item Verkehrsampel steht initial auf Grün - Fußgängerampel auf Rot
     \item Der Nutzer betätigt ein Taster des Taster-cBlocks
@@ -24,16 +24,13 @@ Das zweite Szenario stellt eine Ampel mit Füßgängerübergang vor. Hier kommen
     \item Verkehrsampel schaltet nach X Sekunden auf Grün
     \item Bei nochmaliger Betätigung des Taster-cBlocks springe zum zweiten Schritt
 \end{enumerate}
-Dieses etwas größere Szenario erweitert die Komplexität im Vergleich zu S\#1 um Interaktuator-Kommunikation. Die beiden Aktuatoren müssen sich hierbei über ihren momentanen Zustand (State) austauschen. Ähnlich wie S\#1 elaboriert auch dieses Szenario die Funktionalität und Ausdrucksstärke von flowws.
+Dieses Szenario erweitert die Komplexität von S\#1 durch die Kommunikation zwischen mehreren Aktoren. Beide Aktoren tauschen ihren momentanen Zustand aus, um ihre Entscheidungen zu treffen. Ähnlich wie S\#1, elaboriert auch dieses Szenario die Funktionalität und Ausdrucksstärke von flowws.
 
-\subsection{Szenario S\#3: Terrarium}
-Im dritten und letzten Szenario wird ein intelligentes Terrarium beschrieben welches auf Umgebungstemperatur und Feuchtigkeit reagiert und dem Nutzer über eine LED Hinweise über den Zustand liefert. Zusätzlich steuert ein Taster die Beleuchtung innerhalb des Terrariums, indem er ein öffnen des Terrariums detektiert. In Summe werden drei cBlocks benötigt: zwei LED-cBlocks, ein Temperatur/Feuchtigkeits-Sensor-cBlock und ein Taster cBlock.
+\subsection{Szenario S\#3: Smart-Terrarium}
+Im dritten  Szenario wird ein intelligentes Terrarium beschrieben, welches auf Temperatur innerhalb reagiert und mit dieser Informationen eine Wärmelampe steuert. Zusätzlich lenkt ein Taster die Beleuchtung, indem er feststellt, wenn das Terrarium geöffnet ist. In Summe werden drei cBlocks benötigt: ein LED-cBlock (Wärmelampe), ein Temperatur-cBlock und ein Taster-cBlock.
 \begin{enumerate}
-    \item Wenn Temperatur $>30^{\circ}C$ dann lass LED-Rot aufleuchten
-    \item Wenn Luftfeuchtigkeit $>80$ dann lass LED-Blau aufleuchten
-    \item Wenn Klappe geöffnet wird löse Taster aus
-    \item Wenn Taster aufgelöst dann stelle LED-Block auf 100\% Helligkeit
-    \item Wenn Klappe geschlossen wird löse Taster aus
-    \item Wenn Taster ausgelöst dann stelle LED-Block auf 0\% Helligkeit
+    \item Regele Helligkeit der Wärmelampe, sodass die Temperatur  $>20^{\circ}C$ und $<30^{\circ}C$ ist.
+    \item Wenn Taster ausgelöst ist (Terrarium offen), regele Helligkeit dauerhaft auf LED-Aktors auf 100\%.
+    \item Wenn Taster im Ursprungszustand ist (Terrarium geschlossen), regele Helligkeit des LED-Aktors anhand Schritt 1.
 \end{enumerate}
-Dieses dritte Szenario die Verbindung von Event-fokusierter Programmierung von Verhalten mit sequentiellem Verhalten. Während die Signal-LED konstant auf asynchrone, aperiodische Events wartet ist die Beleuchtung durch die Öffnung des Terrariums eine sequentielle. Auch die Fähigkeit der Priorisierung von Signalen muss flowws hierbei unter Beweis stellen. Ebenfalls wie S\#1 und S\#2 versucht dieses Szenario Aufschluss über die Aussagekraft und Verständlichkeit von flowws gegenüber der Steakholder zu liefern.
+Das dritte Szenario illustriert die Verbindung von Event-fokussierter Programmierung und dem sequentiellem Verhalten von Aktoren, sowie die Priorisierung von Eingangssignalen. Der Aktor muss im ersten Zustand mit aperiodischen Signalen des Temperatursensors verarbeiten. Sobald das Terrarium geöffnet wird, muss der Aktor die Signale des Temperatur-Sensors ignorieren und nach einer Sequenz handeln. Wie in Szenario S\#1 und Szenario S\#2 versucht auch dieses Szenario, Aufschluss über die Aussagekraft und Verständlichkeit von flowws, zu liefern.

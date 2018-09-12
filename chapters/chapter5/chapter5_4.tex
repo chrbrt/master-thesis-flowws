@@ -1,7 +1,17 @@
-\section{Durchführung der Evaluation}
+\section{Erfüllung der Anforderungen und Ziele}
+\subsection{Erfüllen von funktionale Anforderungen}
+Die funktionalen Anforderungen aus Kapitel \ref{subsec:fanf} bezogen sich hauptsächlich auf die Verarbeitung von Daten. Vergleichs-, bool'sche und zeitgesteuerte Operationen (FA\#1-3) sowie die Konvertierung von Signalen (FA\#7) werden von Funktionsknoten abgebildet. Das Auslesen und Anzeigen von Sensordaten (FA\#4) geschieht automatisch über die Sensorknoten. Das Konzept zum Ansteuern von Aktoren und das Programmieren von Aktoren (FA\#5 u. FA\#6) wurden in Kapitel \ref{subsubsec:evebtkonsumierung} und Kapitel \ref{FSMkreieren} ausführlich beschrieben.
 
+\subsection{Erfüllen nicht funktionalen Anforderungen}
+\paragraph{NFN \#0: Parallel und Sequentielles....} Durch das Konzeptmodell von flowws, welches Datenfluss- und \ac{FSM}-Programmierung kombiniert konnte diese Anforderung erfüllt werden. Die Nutzertests haben angedeutet, dass potentielle Endnutzer paralleles und sequentielles Verhalten ohne hohen kognitiven Aufwand innerhalb von flowws begreifen können.
 
-Farben mappen = helligkeitswerte ist nicht intuitiv
-- Besprechung der einzelnen Fragen
+\paragraph{NFN \#1: Daten und State ...} flowws visualisiert Daten und Zustand des Programms an mehreren Stellen. Jeder Knoten zeigt seine aktuellen Ein- und Ausgangs Daten an, der Fluss von Daten wird animiert und der Zustand von Aktoren wird dargestellt (siehe Kapitel\ref{sec:graphischesmodell}). Dadurch entsteht ein Gefühl von dynamik, die es dem Endnutzer erlaubt zu Laufzeit das Verhalten des Programms nachzuvollziehen. Auch das wurde von den Nutzertests bestätigt.
 
-- Besprechung der 
+\paragraph{NFN \#2: Schneller erlernbar...} Durch die visuelle Darstellung von flowws wird sich erhofft, dass das visuelle Denken von Menschen unterstützt wird und somit sich der Lernaufwand reduziert. Die Nutzertests haben Aufschluss über die Verständlichkeit von flowws geliefert. Um einen besseren Aufschluss über die Erlernbarkeit von flowws zu erreichen, müssen weitere Prototypen gebaut werden, welche es erlauben eigene Graphen zu modellieren.
+
+\paragraph{NFN \#3: Schnelle modifzierung...} Die Komponenten von Flowss (Sensoren, Funktionen, Aktoren) sind allesamt in einzelne Knoten gekapselt und durch klar definierte Schnittstellen miteinander verbunden. Funktions- und Aktorknoten lassen sich noch. Dies lädt den Endnutzer dazu ein Knoten auszutauschen und zügig mehrere Alternativen zu einem bestehenden flowws-Graphen erproben. Dieses Verhalten konnte auch schon in den Nutzertests nachgewiesen werden.
+
+\paragraph{NFN \#4: Fehlerprävention} Der größte Teil der Programmierung in flowws stellt das Verbinden von Knoten. flowws versucht durch kontextuelles Markieren von kompatiblen Schnittstellen und dem kontextuellen Auswählen von kompatiblen Funktionsknoten, die Fehlerzahl im Vorraus zu reduzieren. 
+
+\paragraph{NFN \#5: Erweiterbarkeit von Komponenten} flowws kann auf zwei Ebenen von Experten erweitert werden: zum einen durch benutzerdefinierter Logik von Funktionsknoten und zum anderen durch definieren von Aktorfunktionen. Diese beiden Gegebenheiten sollten es fortgeschrittenen Endnutzern erlauben, eine größere Bandbreite von Szenarien abzudecken. Des Weiteren ist flowws \textit{Open Source} und somit von Software-Ingenieuren erweiterbar und anpassbar.
+
