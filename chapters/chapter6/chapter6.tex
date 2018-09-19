@@ -1,25 +1,44 @@
 \chapter{Reflexion \& Zukünftige Arbeiten}
 Im letzten Kapitel wird noch einmal über die Inhalte und Ergebnisse dieser Arbeit reflektiert. Zuletzt wird das Erreichen der Forschungsfragen und die daraus resultierenden Folgefragen diskutiert.
 
+\section{Erfüllung der Anforderungen}
+Die Evaluation hat Aufschluss über die 
+
+\subsection{Erfüllen von funktionale Anforderungen}
+Die funktionalen Anforderungen aus Kapitel \ref{subsec:fanf} bezogen sich hauptsächlich auf die Verarbeitung von Daten. Vergleichs-, bool'sche und zeitgesteuerte Operationen (siehe \hyperref[tab:fanf]{FA\#1-3}) sowie die Konvertierung von Signalen (\hyperref[tab:fanf]{ FA\#7}) werden von Funktionsknoten abgebildet. Das Auslesen und Anzeigen von Sensordaten (\hyperref[tab:fanf]{ FA\#4}) geschieht automatisch über die Sensorknoten. Das Konzept zum Ansteuern von Aktoren und das Programmieren von Aktoren (\hyperref[tab:fanf]{ FA\#5} u. \hyperref[tab:fanf]{ FA\#6}) wurden in Kapitel \ref{subsubsec:evebtkonsumierung} und Kapitel \ref{FSMkreieren} ausführlich beschrieben.
+
+\subsection{Erfüllen nicht funktionalen Anforderungen}
+\paragraph{NFA \#0: Parallel und Sequentielles....} Durch das Konzeptmodell von flowws, welches Datenfluss- und \ac{FSM}-Programmierung kombiniert konnte diese Anforderung erfüllt werden. Die Nutzertests haben angedeutet, dass potentielle Endnutzer paralleles und sequentielles Verhalten, ohne hohen kognitiven Aufwand innerhalb von flowws, begreifen können.
+
+\paragraph{NFA \#1: Daten und State ...} flowws visualisiert Daten und Zustand des Programms an mehreren Stellen. Jeder Knoten zeigt seine aktuellen Ein- und Ausgangs Daten an, der Fluss von Daten wird animiert und der Zustand von Aktoren wird dargestellt (siehe Kapitel\ref{sec:graphischesmodell}). Dadurch entsteht ein Gefühl von dynamik, die es dem Endnutzer erlaubt zu Laufzeit das Verhalten des Programms nachzuvollziehen. Dies wurde von den Nutzertests bestätigt.
+
+\paragraph{NFA \#2: Schneller erlernbar...} Durch die visuelle Darstellung von flowws wird sich erhofft, dass das visuelle Denken von Menschen unterstützt wird und somit sich der Lernaufwand reduziert. Die Nutzertests haben Aufschluss über die Verständlichkeit von flowws geliefert. Um einen besseren Aufschluss über die Erlernbarkeit von flowws zu erreichen, müssen weitere Prototypen gebaut werden, welche es Probanden erlauben eigene Graphen zu modellieren.
+
+\paragraph{NFA \#3: Schnelle modifzierung...} Die Komponenten von flowws (Sensoren, Funktionen, Aktoren) sind allesamt in einzelne Knoten gekapselt und durch klar definierte Schnittstellen miteinander verbunden. Funktions- und Aktorknoten lassen sich noch individuell konfigurieren. Dies lädt den Endnutzer dazu ein, Knoten auszutauschen und zügig mehrere Alternativen zu einem bestehenden flowws-Graphen zu erproben. Dieses Verhalten konnte auch schon in den Nutzertests nachgewiesen werden.
+
+\paragraph{NFA \#4: Fehlerprävention} Der größte Teil der Programmierung in flowws stellt das Verbinden von Knoten. flowws versucht durch kontextuelles Markieren von kompatiblen Schnittstellen und dem kontextuellen Auswählen von kompatiblen Funktionsknoten, die Fehlerzahl im Voraus zu reduzieren. 
+
+\paragraph{NFA \#5: Erweiterbarkeit von Komponenten} flowws kann auf zwei Ebenen von Experten erweitert werden: zum einen durch benutzerdefinierter Logik von Funktionsknoten und zum anderen durch definieren von Aktorfunktionen. Diese beiden Gegebenheiten sollten es fortgeschrittenen Endnutzern erlauben, eine größere Bandbreite von Szenarien abzudecken. Des Weiteren ist flowws \textit{Open Source} und somit von Software-Ingenieuren erweiterbar und anpassbar.
+
+
+
+
+
 Diese Arbeit hatte zum Ziel, das Konzept für ein \ac{EUD}-Werkzeug zu erstellen, dass die spezifischen Anforderungen von \ac{IoT} und den Projekt-Kontext der \acp{cBlock} aufgreift. Die Arbeitet hat sich aus diesem Grund in vier Teile aufgegliedert:
 
 \begin{itemize}
     \item \textbf{Wissenserhebung} In Kapitel \ref{GrundlagenSOTA} wurden die fachlichen Grundlagen in \ac{IoT} und \ac{EUD} gelegt. Hierbei wurden die unterschiedlichen Aspekte, Komponenten und Charakteristiken von \ac{IoT} definiert. Ziel hierbei war es, ein Gefühl für \textit{Smart Devices} und ihre Art der Kommunikation zu erlangen, um später eine adäquate Metapher für flowws, definieren zu können. Ebenfalls wurde der Begriff der \ac{EUD} geklärt. Das Ergebnis des Kapitels, korrespondiert direkt mit der ersten Forschungsfrage und kulminiert mit einer Analyse von drei populären \ac{EUD}-Paradigmen und ihre Implementierungen in der \ac{IoT}-Domäne.
-    \item \textbf{Analyse} Kapitel \ref{chapter:analyse} bestand aus einer zweigeteilten Analyse, die die generellen Probleme von \acp{EUD} im \ac{IoT} zu abstrahieren und den Endnutzer selbst mit seinen Problemen zu charakterisieren. Das Ergebnis zielt auf die Beantwortung der Forschungsfrage xxx ab und ist eine Spezifikation von Vision, Zielen und Anforderungen eines \ac{EUD}-Werkzeugs, welches sich Gesamtkontext dieser Thesis orientiert.
-    \item \textbf{Konzeption} Das Ziel von Kapitel \ref{chapter:konzept} war es, sämtliche Probleme und Anforderungen in ein Programmierkonzept umzusetzen. Das Ergebnis wurde ''flowws'' getauft. Es ist eine graphische Programmiersprache Datenfluss-Logik und \ac{FSM}-Logik zu kombiniert um somit die spezifischen Rahmenbedingungen des Kontext erfüllt und somit Forschungsfrage (XXX) beantwortet.
-    \item \textbf{Evaluation} Die Evaluation des Konzeptmodells wurde anhand eines Nutzertests mit einem \ac{EUD}-Prototyp und geeigneten Endnutzern, durchgeführt. Ziel hierbei war es festzustellen, ob das Konzeptmodell von flowws mit dem mentalen Modell der Endnutzer vereinbar ist. Das Ergebnis ist die Antwort auf Forschungsfrage (XXX), indem bewiesen wurde, dass flowws eine vielversprechendes Konzeptmodell besitzt, welches die fachlichen und technischen Anforderungen unterstützt und gleichzeitig den Endnutzer in kurzer Zeit nachvollziehbar ist.
+    \item \textbf{Analyse} Kapitel \ref{chapter:analyse} bestand aus einer zweigeteilten Analyse, die die generellen Probleme von \acp{EUD} im \ac{IoT} abstrahiert und dem Endnutzer selbst mit seinen Problemen charakterisiert. Das Ergebnis zielt auf die Beantwortung der Forschungsfrage xxx ab und ist eine Spezifikation von Vision, Zielen und Anforderungen eines \ac{EUD}-Werkzeugs, welches sich Gesamtkontext dieser Thesis orientiert.
+    \item \textbf{Konzeption} Das Ziel von Kapitel \ref{chapter:konzeption} war es, sämtliche Probleme und Anforderungen in ein Konzeptmodell umzusetzen. Das Ergebnis wurde ''flowws'' getauft. Es ist eine graphische Programmiersprache Datenfluss-Logik und \ac{FSM}-Logik zu kombiniert um somit die spezifischen Rahmenbedingungen des Kontext erfüllt und somit Forschungsfrage (XXX) beantwortet.
+    \item \textbf{Evaluation} Die Evaluation des Konzeptmodells wurde anhand eines Nutzertests mit einem \ac{EUD}-Prototyp und geeigneten Endnutzern, durchgeführt. Ziel hierbei war es festzustellen, ob das Konzeptmodell von flowws mit dem mentalen Modell der Endnutzer vereinbar ist. Das Ergebnis ist die Antwort auf Forschungsfrage (XXX), indem bewiesen wurde, dass flowws eine vielversprechendes Konzeptmodell besitzt, welches die fachlichen und technischen Anforderungen unterstützt und gleichzeitig für den Endnutzer in kurzer Zeit nachvollziehbar ist.
 \end{itemize}
 
-Das Endprodukt dieser Thesis ist das \ac{EUD}-Konzept, das hinter flowws steht. Das Konzept hat gezeigt, dass eine Kombination von Datenfluss- und \ac{FSM}-Pro\-gram\-ma\-tik nicht nur eine treffende Abstraktion bzw. Metapher für \ac{IoT} ist, sondern auch ein guter Kompromiss zwischen Funktionsumfang und Erlernbarkeit bietet. Es wurde ein Prototyp entwickelt, welches die Nachvollziehbarkeit des Konzepts bewiesen hat. Dies ist ein Ansatzpunkt für weitere Arbeiten in diesem Kontext:
+Das Endprodukt dieser Thesis ist das \ac{EUD}-Konzept, das hinter flowws steht. Das Konzept hat gezeigt, dass eine Kombination von Datenfluss- und \ac{FSM}-Pro\-gram\-ma\-tik nicht nur eine treffende Abstraktion bzw. Metapher für \ac{IoT} ist, sondern auch ein guter Kompromiss zwischen Funktionsumfang und Erlernbarkeit bietet. Es wurde ein Prototyp entwickelt, welches die Nachvollziehbarkeit des Konzepts bewiesen hat. Dies ist ein guter Ansatzpunkt für weitere Arbeiten in diesem Kontext:
 
 \begin{itemize}
-    \item \textbf{Funktionelle Konzeption:} Eine komplettes \ac{EUD}-Werkzeug ähnelt einer \ac{IDE}. Sie besitzt mehr Funktionalitäten, die der Endnutzer ausnutzen kann, um Programme zu erstellen, zu testen und zu verwalten. Daraus folgend, 
+    \item \textbf{Funktionelle Konzeption:} Eine komplettes \ac{EUD}-Werkzeug ähnelt einer \ac{IDE}. Sie besitzt Funktionalitäten, die der Endnutzer ausnutzen kann, um Programme zu erstellen, zu testen und zu verwalten. Es stellt sich also zur Frage, welche weiteren Funktionen benötigt werden, um aus flowws ein produktives Werkzeug zu machen.
     
-    \item \textbf{Technische Konzeption:} Die momentane Implementierung von flowws beschränkt sich auf einen \textit{Experience-Prototyp}. Dieser ist eine reine Darstellung des Konzepts und dient um die \ac{UX} von flowws zu evaluieren. Die technische Umsetzung von flowws wurde in dieser Thesis nicht behandelt, ist aber aufgrund der Interaktionen verschiedener Teilsysteme ein nicht-triviale Problemstellung. Eine technische Anforderungsanalyse, Architektur und Implementierung von flowws kann Teil zukünftiger Arbeiten sein. 
+    \item \textbf{Technische Konzeption:} Die momentane Implementierung von flowws beschränkt sich auf einen \textit{Experience-Prototyp}. Dieser ist eine reine Darstellung des Konzepts und dient um die \ac{UX} von flowws zu evaluieren. Die technische Umsetzung von flowws wurde in dieser Thesis nicht behandelt, ist aber aufgrund der Interaktionen verschiedener Teilsysteme ein nicht-triviale Problemstellung. Folglich kann eine technische Anforderungsanalyse, Architekturbeschreibung und Implementierung, die cBlocks integriert, ein Ziel zukünftiger Arbeiten sein. 
     
-    \item \textbf{Evaluation} größere evaluation - workshop - evaluation zur erstellung statt rein zum anschauen
+    \item \textbf{Erweiterte Evaluation} Eine der möglichen Kritiken der Evaluation ist die Größe der Stichprobe. Drei Partizipanten sind nicht ausreichend, um eine nachhaltige Aussage zu treffen. Nachfolgende Arbeiten könnten die Anzahl der Probanden erhöhen um eine allgemeingültige Aussage über das Konzeptmodell von flowws zu treffen. Des Weiteren, war die hier aufgeführte Evaluation rein passiv, sprich der Nutzer hat nicht aktiv mit flowws interagiert. Zukünftige Arbeiten könnten ausführlichere Studien beinhalten, die den Erstellungsprozess von Graphen in flowws auf seine Nutzerfreundlichkeit überprüfen.
 \end{itemize}
-
-
-
-short comings/not behandelte themen -> Fragen für nächste arbeiten

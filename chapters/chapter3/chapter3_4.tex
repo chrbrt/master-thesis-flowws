@@ -1,10 +1,10 @@
 \section{Szenarien}\label{sec:szenarien}
 Szenarios erlauben es die Ziele eines Software-Systems und Stakeholder erzählerisch zu verbinden und somit die Anforderungen an ein System zu verdeutlichen (\cite{Lamsweerde2001scenario}). Im Folgenden werden drei Szenarien beschrieben, die verschiedene Komplexität aufweisen und verschiedene Anforderungen gegenüber flowws stellen. Die Szenarios versuchen die Problemstellungen von Kapitel \ref{sec:problemanalyse} aufzugreifen um dadurch zu Erfahren, wie flowws damit umgehen würde und welche Vor- und Nachteile sich dadurch abzeichnen. 
 
-\subsection{Szenario S\#1: Lichtschalter}
+\subsection{Szenario S\#1: Lichtschalter\label{szenario1}}
 Im ersten Szenario wird soll eine zeitgesteuerte Lampe ein und ausgeschaltet werden. Hierbei kommen zwei cBlocks zum Einsatz: ein Taster-cBlock und ein LED-cBlock. Der Ablauf ist wie folgt:
 \begin{enumerate}
-    \item Die Lampe startet initial in einem ausgeschalteten Zustand
+    \item Die Lampe ist initial ausgeschaltet
     \item Der Nutzer betätigt ein Taster des Taster-cBlocks
     \item Der LED-cBlock leuchtet auf
     \item Nach eine vorbestimmten Zeitspanne schaltet sich LED-cBlock ab
@@ -12,8 +12,8 @@ Im ersten Szenario wird soll eine zeitgesteuerte Lampe ein und ausgeschaltet wer
 \end{enumerate}
 In diesem Szenario ist es die grundsätzliche Funktionsweise von flowws zu illustrieren. Hierfür wird ein sequentielle Abfolge von Aktionen, welche durch ein Event (Benutzerinteraktion) getriggert werden, durchgeführt. Zusätzlich erlaubt dieses Beispiel die Verständlichkeit und Benutzbarkeit des Konzepts von flowws am Endnutzer auf einem grundlegenden Level zu testen.
 
-\subsection{Szenario S\#2: Ampelschaltung}
-Das zweite Szenario stellt eine Ampel mit Fußgängerübergang dar. Das Szenario besteht aus drei \ac{cBlocks}: ein Taster-cBlock, welcher die Fußgängerampel betätigt und zwei LED-cBlocks, welche die Ampeln symbolisieren. Der Ablauf wird im Folgenden beschrieben: 
+\subsection{Szenario S\#2: Ampelschaltung\label{szenario2}}
+Das zweite Szenario stellt eine Ampel mit Fußgängerübergang dar. Das Szenario besteht aus drei \acp{cBlock}: ein Taster-cBlock, der die Fußgängerampel betätigt und zwei LED-cBlocks, welche die Ampeln symbolisieren. Der Ablauf wird im Folgenden beschrieben: 
 \begin{enumerate}
     \item Verkehrsampel steht initial auf Grün - Fußgängerampel auf Rot
     \item Der Nutzer betätigt ein Taster des Taster-cBlocks
@@ -26,10 +26,10 @@ Das zweite Szenario stellt eine Ampel mit Fußgängerübergang dar. Das Szenario
 \end{enumerate}
 Dieses Szenario erweitert die Komplexität von S\#1 durch die Kommunikation zwischen mehreren Aktoren. Beide Aktoren tauschen ihren momentanen Zustand aus, um ihre Entscheidungen zu treffen. Ähnlich wie S\#1, elaboriert auch dieses Szenario die Funktionalität und Ausdrucksstärke von flowws.
 
-\subsection{Szenario S\#3: Smart-Terrarium}
+\subsection{Szenario S\#3: Smart-Terrarium\label{szenario3}}
 Im dritten  Szenario wird ein intelligentes Terrarium beschrieben, welches auf Temperatur innerhalb reagiert und mit dieser Informationen eine Wärmelampe steuert. Zusätzlich lenkt ein Taster die Beleuchtung, indem er feststellt, wenn das Terrarium geöffnet ist. In Summe werden drei cBlocks benötigt: ein LED-cBlock (Wärmelampe), ein Temperatur-cBlock und ein Taster-cBlock.
 \begin{enumerate}
-    \item Regele Helligkeit der Wärmelampe, sodass die Temperatur  $>20^{\circ}C$ und $<30^{\circ}C$ ist.
+    \item Regele Helligkeit der Wärmelampe, sodass die Temperatur  $>20^{\circ}C$\\ und $<30^{\circ}C$ ist.
     \item Wenn Taster ausgelöst ist (Terrarium offen), regele Helligkeit dauerhaft auf LED-Aktors auf 100\%.
     \item Wenn Taster im Ursprungszustand ist (Terrarium geschlossen), regele Helligkeit des LED-Aktors anhand Schritt 1.
 \end{enumerate}

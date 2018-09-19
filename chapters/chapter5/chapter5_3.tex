@@ -1,8 +1,9 @@
 \section{Durchführung der qualitativen Evaluation}
 
-Die Durchführung des Benutzertests geschah mit drei Personen, von denen zwei Personen, Designer (Master of Arts und Diplom). Die andere Person arbeitet im Bereich der \textit{Business-Communication}/Marketing (\textit{Master of Arts}), besitzt allerdings praktische Erfahrung im Bereich \textit{Product-Design} durch aktiver Beteiligung an mehreren Design-Projekten. Sie sind allesamt weiblich, zwischen 22-35 Jahren alt, und besitzen umfangreiches Wissen über Designmehthoden (bspw. \textit{Rapid-Prototyping}, \textit{Design-Thinking}, etc.). Die Erfahrung der Benutzergruppe im Bereich \ac{IoT} und \textit{Soft\-ware-Engineering} ist gering und reicht von ''\textit{unbedarft}'' bis ''\textit{Grundkenntnisse} mit Arduino''. Die Benutzergruppe reflektiert somit den Charakter der Persona ''Laura'' (siehe Kapitel \ref{sec:persona}) gut.
+Die Durchführung des Benutzertests geschah mit drei Personen, von denen zwei Personen, Designer (Master of Arts und Diplom). Die andere Person arbeitet im Bereich der \textit{Business-Communication}/Marketing (\textit{Master of Arts}), besitzt allerdings praktische Erfahrung im Bereich \textit{Product-Design} durch aktiver Beteiligung an mehreren Design-Projekten. Sie sind alle weiblich, zwischen 22-35 Jahren alt, und besitzen umfangreiches Wissen über Designmehthoden (bspw. \textit{Rapid-Prototyping}, \textit{Design-Thinking}, etc.). Die Erfahrung der Benutzergruppe im Bereich \ac{IoT} und \textit{Soft\-ware-Engineering} ist gering und reicht von ''\textit{unbedarft}'' bis ''\textit{Grundkenntnisse} mit Arduino''. Die Benutzergruppe reflektiert somit den Charakter der Persona ''Laura'' (siehe Kapitel \ref{sec:persona}) gut.
 
-\paragraph{Verständnis Datenfluss-Komponente des flowws-Graphen} Die Datenfluss-Kom\-po\-nen\-te ist das initiale Element, dass der Benutzer bei flowws erblickt. Es wurde die \textit{funktionale Aussagekraft}, \textit{Sichtbarkeit}, die \textit{fortwährende Evaluation} des Programmes und die Qualität der \textit{Abstraktionen} der einzelnen Knoten evaluiert. Folgende Beobachtungen wurden gemacht: 
+\subsection*{Verständnis Datenfluss-Komponente des flowws-Graphen}
+Die Datenfluss-Kom\-po\-nen\-te ist das initiale Element, dass der Benutzer bei flowws erblickt. Es wurde die \textit{funktionale Aussagekraft}, \textit{Sichtbarkeit}, die \textit{fortwährende Evaluation} des Programmes und die Qualität der \textit{Abstraktionen} (siehe \ref{tab:cognitivedimensions}) der einzelnen Knoten evaluiert. Folgende Beobachtungen wurden gemacht: 
 \begin{itemize}
     \item Zwei von drei Probanden konnten die virtuellen Knoten mit denen der physischen Knoten abgleichen.
     \item Alle Probanden identifizieren, das Signale zwischen den einzelnen Knoten gesendet werden.
@@ -13,7 +14,8 @@ Die Durchführung des Benutzertests geschah mit drei Personen, von denen zwei Pe
     \item Ein Proband bemängelte, dass generische Knoten nicht benannt sind (bspw. anstatt ''Taster'', ''Taster für Terrariumöffnung'').
 \end{itemize}
 
-\paragraph{Verständnis für Aktoren/\ac{FSM}} Die Steuerung der Aktor-\ac{FSM} ist die zweite Säule des flowws-Konzepts. Ähnlich wie bei der Datenfluss-Komponente, wurden die Komponenten des Aktors auf Basis der gleichen \ac{CD} evaluiert. Die Probanden bemerkten Folgendes:
+\subsection*{Verständnis für Aktoren/\ac{FSM}} 
+Die Steuerung der Aktor-\ac{FSM} ist die zweite Säule des flowws-Konzepts. Ähnlich wie bei der Datenfluss-Komponente, wurden die Komponenten des Aktors auf Basis der gleichen \ac{CD} evaluiert. Die Probanden bemerkten Folgendes:
 \begin{itemize}
     \item Alle Probanden konnten den Aktor als solchen identifizieren.
     \item Ohne Einweisung, konnten die Probanden nur wenig mit der Darstellung der \ac{FSM} anfangen. Nach kurzer Erläuterung, wurde das Prinzip von allen Probanden angenommen.
@@ -23,7 +25,7 @@ Die Durchführung des Benutzertests geschah mit drei Personen, von denen zwei Pe
     \item Nach einer Erläuterung konnten zwei von drei Probanden das Verhalten des Aktors auf willkürliche Eingangssignale vorhersagen. Dabei beschrieben sie implizit die Fähigkeit von \acp{FSM}, Signale zu priorisieren.
 \end{itemize}
 
-\paragraph{Verständnis für Darstellung von flowws}
+\subsection*{Verständnis für Darstellung von flowws}
 \begin{itemize}
     \item Farbliche Aufteilung der Knoten in Sensor, Funktion und Aktor wurde von allen Benutzern sofort unterbewusst angenommen.
     \item Die Farben der Aktor-Eingänge sollten mit den Farben der Übergängen übereinstimmen.
@@ -33,10 +35,9 @@ Die Durchführung des Benutzertests geschah mit drei Personen, von denen zwei Pe
     \item Die Darstellung und Animationen von flowws erinnern laut Probanden an Rohrleitungen und an Dia\-lyse\-ge\-räte.    
     \item Der Verlust eines Indexes, mit sämtlichen Funktionsknoten machte einen einen Probanden unsicher, da keine Knoten zum Vergleichen bereitstanden. Ein Index würde einen besseren Gesamtkontext für die Funktionsknoten bieten. 
 \end{itemize}
-
-\paragraph{Sonstige Bemerkungen} 
+\subsection*{Sonstige Bemerkungen} 
 \begin{itemize}
-    \item Zwei von drei Probanden fingen an, mit der Konfigurationen der Funktionsknoten zu spielen, ohne dass sie dazu aufgefordert wurden und der Prototyp dieses nur im geringen Maße unterstützt.
+    \item Zwei von drei Probanden fingen an, mit der Konfigurationen der Funktionsknoten zu explorieren, ohne dass sie dazu aufgefordert wurden und der Prototyp dieses nur im geringen Maße unterstützt.
     \item Die Probanden besitzen Schwierigkeiten mit nicht-deskriptiven Daten. Ein Proband konnte nichts mit einem Helligkeitswerte von 1.0 des LED-Aktors anfangen, da sie die prozentuale Skala der Eigenschaft nicht intuitiv herleiten konnte.
     \item Einem der Probanden war es möglich die Fehlkonfiguration eines Funktionsknotens, durch den Gutachter, auszumachen.
 \end{itemize}
