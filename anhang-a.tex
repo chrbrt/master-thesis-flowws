@@ -101,10 +101,25 @@ Wann hat das Programm entgegen ihren Vermutungen gehandelt?\\
 \noindent\rule{\textwidth}{1pt}
 \newpage
 
-\subsection{Szenario \#1}
+\subsection{Szenario \#1}\label{anhang:szenario1}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{bilder/Anhang/timerclock_cut.png}
+    \caption{Szenario \#1: Bestehend aus Taster-Sensorknoten, LED-Aktorknoten und Timer-Funktionsknoten.}
+    \label{fig:szenario1}
+\end{figure}
+Dieser Graph (siehe \ref{fig:szenario1}) bildet die Zeitschaltuhr aus Szenario \#1 (siehe Kapitel \ref{szenario1}) ab. Das Szenario besteht aus drei Elementen und verwendet dabei jeden Typ von Knoten. 
+Ziel dabei ist es, das der Endnutzer die einzelnen Elemente identifiziert und ihr Zusammenspiel erklärt. Es ist insbesondere interessant, ob der Proband realisiert, dass der Aktor seinen Zustand dem Rest des Graphen mitteilt und somit das Verzögerte ausschalten der LED ermöglicht.
 
-Das vor dir befindliche flowws Programm bildet eine simple Zeitschaltuhr ab. Wird ein Knopf betätigt schaltet sich eine LED an und nach einer kurzen Zeitspanne wieder aus.
+\subsection{Szenario \#2}\label{anhang:szenario2}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{bilder/Anhang/terrariumszenario_cut.png}
+    \caption{Szenario \#2: Bestehend aus zwei Taster-Sensorknoten, LED-Aktorknoten und Konverter-Funktionsknoten}
+    \label{fig:szenario3}
+\end{figure}
+In Abbildung \ref{fig:szenario3} wird das Terrarium Szenario \#3 von Kapitel \ref{szenario3} im flowws-Prototyp abgebildet. Das Terrarium regelt die Helligkeit abhängig von der Temperatur innerhalb des Terrariums automatisch.
+Wird das Terrarium geöffnet, wird ein Taster betätigt und erhellt sich das Terrarium auf die maximale Stufe. Sobald das Terrarium wieder geschlossen wird, wird ein zweiter Taster betätigt und das Terrarium regelt sich wieder anhand des Temperatur-Sensors. 
 
-\subsection{Szenario \#2}
-
-Im folgenden wird ein Terrarium abgebildet. Das Terrarium regelt die Helligkeit abhängig von der Temperatur innerhalb des Terrariums automatisch. Wird das Terrarium geöffnet, erhellt sich das Terrarium auf die maximale Stufe. Sobald das Terrarium wieder geschlossen wird, regelt das Terrarium sich wieder von selbst.
+Der Proband muss hierbei, wie im vorherigen Beispiel, die einzelnen Knoten identifizieren. Gleichzeitig soll der Proband die komplexere Aktorlogik verstehen. Dazu gehört, dass der LED-Aktor eine Signalpriorisierung vornimmt, sobald das Terrarium geöffnet ist.
+\newpage

@@ -1,14 +1,15 @@
 \chapter{Einleitung}\label{sec:1_einleitung}
 In diesem Kapitel wird die wissenschaftliche und praktische Motivation dieser Thesis dargelegt. Des Weiteren, wird der Projekt-Kontext dieser Arbeit erläutert um Hintergrund, Ziel und Abgrenzung dieser Arbeit besser verständlich zu machen. Zuletzt wird ein Überblick über die restlichen Kapitel dieser Thesis gegeben.
 
-\section{Motivation}\label{sec:1_motivation}
-\ac{Ubicomp}, die Allgegenwart der virtuellen Welt in der Realität wird von vielen Designern erforscht (\cite{Kuniavsky.2010}). Um Interaktion mit Systemen zu ermöglichen, ohne explizite \acp{UI} zu verwenden, werden neue Konzepte und Technologien benötigt. Seit Beginn des 21. Jahrhunderts hat sich \ac{IoT} als Schlüsselparadigma herauskristallisiert, um virtuelle und reale Welt verschmelzen zu lassen (\cite{Gubbi.2013}). \ac{IoT}-Produkte reichen von Glühbirnen\footnote{\url{http://www.meethue.com}}, die auf ihre Umgebung reagieren, bis hin zu intelligentem Besteck\footnote{\url{https://www.hapi.com/}}, welches das Essverhalten von Nutzern aufnimmt. Durch das Ausnutzen der digitalen Welt, haben sich Produkte auf dem Markt etabliert, welche die \ac{UX} ihrer analogen Vorgänger erweitern.
 
-Obwohl die theoretischen Vorteile von intelligenten Objekten zahlreich sind, mangelt es oftmals noch an ihren praktischen Umsetzungen -- vor allem im Bereich der \ac{UX} (\cite{Resnick.2013}). Diesem Umstand liegt die Tatsache zu Grunde, dass Produktentwicklung und Forschung im Bereich der \ac{IoT}, Designer und Wissenschaftler vor neue Herausforderungen stellt. Um die Effektivität neuer \ac{IoT}-Konzepte empirisch validieren zu können (\cite{Robinson.2018}), benötigt es Prototypen, die diese Konzepte umsetzen. 
+\section{Motivation}\label{sec:1_motivation}
+\ac{Ubicomp}, die Allgegenwart der virtuellen Welt in der Realität wird von vielen Designern erforscht \cite{Kuniavsky.2010}. Um Interaktion mit Systemen zu ermöglichen, ohne explizite \acp{UI} zu verwenden, werden neue Konzepte und Technologien benötigt. Seit Beginn des 21. Jahrhunderts hat sich \ac{IoT} als Schlüsselparadigma herauskristallisiert, um virtuelle und reale Welt verschmelzen zu lassen \cite{Gubbi.2013}. \ac{IoT}-Produkte reichen von Glühbirnen\footnote{\url{http://www.meethue.com}}, die auf ihre Umgebung reagieren, bis hin zu intelligentem Besteck\footnote{\url{https://www.hapi.com/}}, welches das Essverhalten von Nutzern aufnimmt. Durch das Ausnutzen der digitalen Welt, haben sich Produkte auf dem Markt etabliert, welche die \ac{UX} ihrer analogen Vorgänger erweitern.
+
+Obwohl die theoretischen Vorteile von intelligenten Objekten zahlreich sind, mangelt es oftmals noch an ihren praktischen Umsetzungen -- vor allem im Bereich der \ac{UX} \cite{Resnick.2013}. Diesem Umstand liegt die Tatsache zu Grunde, dass Produktentwicklung und Forschung im Bereich der \ac{IoT}, Designer und Wissenschaftler vor neue Herausforderungen stellt. Um die Effektivität neuer \ac{IoT}-Konzepte empirisch validieren zu können \cite{Robinson.2018}, benötigt es Prototypen, die diese Konzepte umsetzen. 
 
 Das Entwickeln von \ac{IoT}-Prototypen, verlangt von Forschern und Designern, dass sie sich eine große Menge an technischem Fachwissen aneignen. Dieses Fachwissen lässt sich in zwei Teile auftrennen: 
 
-\textbf{Erstens}, hardwarenahes Wissen (bspw. Elektrotechnik, Signalverarbeitung und Netzwerktechnik) um Komponenten und Infrastruktur der Prototypen bauen zu können. Diesem Problem nimmt sich [volker] mit dem Werkzeug \acp{cBlock} an. 
+\textbf{Erstens}, hardwarenahes Wissen (bspw. Elektrotechnik, Signalverarbeitung und Netzwerktechnik) um Komponenten und Infrastruktur der Prototypen bauen zu können. Diesem Problem nimmt sich \cite{weckbach2018cblocks} mit dem Werkzeug \acp{cBlock} an. 
 
 \textbf{Zweitens} und Motivation dieser Thesis, ist das benötigte Wissen im Bereich des Software-Engineering und der Programmierung. \textit{Smart Devices} und \textit{connected Products} können nur so intelligent sein, wie sie programmiert werden. Aus diesem Grund, muss sich der Designer intensiv mit der Komplexität der Programmierung als Ganzes und den Besonderheiten von hardwarenaher Programmierung auseinandersetzen. Diese zusätzliche Arbeitsbelastung ist nur bedingt zumutbar und bei der Erforschung von \ac{IoT}-Konzepten nicht zielführend.
 
@@ -17,7 +18,7 @@ Das Aneignen dieses Wissens stellt eine Barriere für ''Nicht-Experten'' wie Des
 \section{Kontext}\label{sec:1_kontext}
 Diese Thesis wird im Zusammenhang eines zweijährigen Forschungsprojekts geschrieben, dessen Ziel es ist, geeignete Werkzeuge zu erforschen, welche die Kommunikation zwischen Produkt-Entwicklung/Design und Kunden durch den Einsatz von Prototyp-getriebener Entwicklung zu verbessern. Im Zuge dieses Projekts werden verschieden Prozesse, Software und Hardware entwickelt. Diese Komponenten sollen kleinen und mittelständischen Unternehmen bei der Erstellung von Prototypen im Bereich \ac{IoT}, Webtechnologien und Virtual Reality/Augmented Reality helfen.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \begin{subfigure}[b]{0.3\textwidth}
         \includegraphics[width=1\linewidth]{bilder/chapter1/DHT22.png}
@@ -36,36 +37,34 @@ Diese Thesis wird im Zusammenhang eines zweijährigen Forschungsprojekts geschri
         \caption{}
         \label{fig:mouse}
     \end{subfigure}
-    \caption{Typische \acp{cBlocks}. Hier bestehend aus drei unterschiedlichen Blöcken: Temperatur-Sensor (a),  LED-Aktor (b) und RFID-Sensor (c)}
+    \caption{Typische \acp{cBlock}. Hier bestehend aus drei unterschiedlichen Blöcken: Temperatur-Sensor (a),  LED-Aktor (b) und RFID-Sensor (c)}
     \label{fig:cblockfoto}
 \end{figure}
 
-
-Im Zuge dessen, wurde die Hardwareplattform \acp{cBlock} entwickelt. \acp{cBlock} ist ein \textit{open-source} Bausteinsystem zur Unterstützung von Designern beim \textit{Rapid-Prototyping}-Prozess von \ac{IoT} Produkten. Ein jeder Baustein abstrahiert verschiedenen Sensoren oder Aktoren und versucht dadurch, die Komplexität von hardwarenahen Entwicklungsaufgaben (beispielsweise Verdrahtung der Komponenten, Kommunikation zwischen Sensoren und Aktuatoren, Wählen von Protokollen) zu reduzieren. Das wichtigste Ziel von \acp{cBlock} ist allerdings nicht nur eine Aufwandsreduzierung auf Hardware-Ebene durchzuführen, sondern auch die Eintrittsbarriere für die Programmierung der Logik herunter zusetzen. Dadurch soll der technische Arbeitsaufwand von Designern so reduziert werden, dass sie sich darauf fokussieren können, neue \ac{IoT}-Erfahrungen zu erproben.
+Im Zuge dessen, wurde die Hardwareplattform \acp{cBlock} entwickelt. \acp{cBlock} ist ein \textit{open-source} Bausteinsystem zur Unterstützung von Designern beim Prototyping-Prozess von \ac{IoT} Produkten. Ein jeder Baustein abstrahiert verschiedenen Sensoren oder Aktoren und versucht dadurch, die Komplexität von hardwarenahen Entwicklungsaufgaben (beispielsweise Verdrahtung der Komponenten, Kommunikation zwischen Sensoren und Aktuatoren, Wählen von Protokollen) zu reduzieren. Das wichtigste Ziel von \acp{cBlock} ist allerdings nicht nur eine Aufwandsreduzierung auf Hardware-Ebene durchzuführen, sondern auch die Eintrittsbarriere für die Programmierung der Logik herunter zusetzen. Dadurch soll der technische Arbeitsaufwand von Designern so reduziert werden, dass sie sich darauf fokussieren können, neue \ac{IoT}-Erfahrungen zu erproben.
 
 \section{Zielsetzung}\label{sec:1_zielsetzung}
-Wie im vorherigen Kapitel besprochen, ist die \acp{cBlock}-Hardware dafür gedacht, die Entwicklung von \ac{IoT} Prototypen zu vereinfachen. Allerdings beschränkt sich diese Verbesserung der Usability ausschließlich auf den Hardware-Aspekt von \ac{IoT}. Deshalb besteht das \textbf{Ziel} dieser Arbeit darin, dem \textit{End-User} (d.h. dem Designer) bei der Erstellung von Programmlogik, welche die \ac{cBlock} steuern, zu unterstützen. Hierfür wird eine \ac{EUD}-Plattform konzipiert und evaluiert, welche auf die Anforderungen der Domäne des \ac{IoT} sowie den Anforderungen der Domänenexperten, gerecht wird. Dieses \ac{EUD}-Werkzeug, genannt \textit{flowws}, soll es Designern ermöglichen zusammen mit der \acp{cBlock}-Hardware, funktionale Prototypen zu gestalten.
+Das \textbf{Ziel} dieser Arbeit darin, dem \textit{End-User} (d.h. dem Designer) bei der Erstellung von Programmlogik, welche die \ac{cBlock} steuern, zu unterstützen. Hierfür wird eine \ac{EUD}-Plattform konzipiert und evaluiert, welche auf die Anforderungen der Domäne des \ac{IoT} sowie den Anforderungen der Domänenexperten, gerecht wird. Dieses \ac{EUD}-Werkzeug, genannt \textit{flowws}, soll es Designern ermöglichen zusammen mit der \acp{cBlock}-Hardware, funktionale Prototypen zu gestalten.
 
 Folgende \textbf{Forschungsfragen} sollen beantwortet werden:
+
 \begin{itemize}
-    \item \textbf{Bestehende Ansätze} \ac{EUD}-Werkzeuge sind in der wissenschaftlichen Literatur ein seit den 1980ern behandeltes Thema. Trotzdem hat sich noch keine breit angenommene Theorie etabliert. In der Praxis haben sich allerdings mehrere Paradigmen durchgesetzt. Um eine Entscheidung für flowws zu treffen werden folgende Fragen deshalb behandelt:
-    \begin{itemize}
-        \item Welche Ansätze für \ac{EUD}-Werkzeuge haben sich etabliert, besonders im Bereich der \ac{IoT}?
-        \item Was sind die Vor- und Nachteile der Paradigmen?
-    \end{itemize}
-    \item \textbf{Anforderungen} Wie schon im vorangeschrittenen Kapitel beschrieben, ist das Projekt durch spezielle Rahmenbedingungen bzgl. Prozessen und Stakeholdern gekennzeichnet. Deshalb die Frage:
+    \item \textbf{\#1 -- Analyse \& Anforderung} Wie schon im vorangeschrittenen Kapitel beschrieben, ist das Projekt durch spezielle Rahmenbedingungen bzgl. Prozessen und Stakeholdern gekennzeichnet. Deshalb die Frage:
     \begin{itemize}
         \item Welche fundamentalen Probleme müssen \ac{EUD}-Werkzeuge in der \ac{IoT}-Domäne überwinden?
         \item Welche Anforderungen stellt die \ac{IoT} und die involvierten Stakeholder an ein \ac{EUD}-Werkzeug?
     \end{itemize}
-    \item \textbf{Evaluation} Im Anschluss zur Anforderungserhebung und Erarbeitung eines Konzepts eines \ac{EUD}-Werkzeuges soll die Wirksamkeit der Entscheidungen diskutiert und folgende Frage beantwortet werden: 
+        \item \textbf{\#2 -- Konzeption} Die Analyse der Problemdomäne resultiert in den Anforderungen an das Konzept. 
     \begin{itemize}
-        \item Was sind die Vor- und Nachteile des erarbeiteten Konzepts?
-        \item Inwiefern lassen sich die Erkenntnisse auf zukünftige Projekte in diesem Themenbereich übertragen?
+        \item Wie können die Eigenheiten der Anwendungsdomäne in ein \ac{EUD}-Konzept übertragen werden?
+    \end{itemize}
+    \item \textbf{\#3 -- Evaluation} Im Anschluss zur Anforderungserhebung und Erarbeitung eines Konzepts eines \ac{EUD}-Werkzeuges soll die Wirksamkeit der Entscheidungen diskutiert und folgende Fragen beantwortet werden: 
+    \begin{itemize}
+        \item Was sind die Vorteile des erarbeiteten Konzepts und inwiefern lassen sich die Erkenntnisse auf zukünftige Projekte in diesem Themenbereich übertragen?
     \end{itemize}
 \end{itemize}
 
-\paragraph{Abgrenzung} Es ist nicht Ziel dieser Arbeit eine vollständige \ac{EUD} für einen Produktiveinsatz (bspw. in Form einer Turing-Vollständigen \ac{DSL}) zu konzipieren, sondern vielmehr geeignete Metaphern finden und \ac{UI}-Ansätze zu konzipieren und zu evaluieren, um einen besseren Einblick für zukünftige Projekte im Bereich des \ac{IoT}-Prototyping zu erhalten. Des Weiteren, grenzt sich diese Arbeit von hardware-technisch ähnlichen Systemen wie bspw. eBlocks (\cite{Phalke.2010}) ab, indem der Anwendungsfokus nicht auf Werkzeug zur Bildung im Bereich Software Engineering oder \ac{IoT} gelegt wird. Vielmehr handelt es sich bei flowws um ein Entwicklungswerkezug, welches aktiv zur Erprobung und Entwicklung von \ac{IoT}-Prototypen dienen soll.
+\paragraph{Abgrenzung} Es ist nicht Ziel dieser Arbeit eine vollständige \ac{EUD} für einen Produktiveinsatz (bspw. in Form einer Turing-Vollständigen \ac{DSL}) zu konzipieren, sondern vielmehr geeignete Metaphern finden und \ac{UI}-Ansätze zu konzipieren und zu evaluieren, um einen besseren Einblick für zukünftige Projekte im Bereich des \ac{IoT}-Prototyping zu erhalten. Des Weiteren, grenzt sich diese Arbeit von hardware-technisch ähnlichen Systemen wie bspw. eBlocks \cite{Phalke.2010} ab, indem der Anwendungsfokus nicht auf Werkzeug zur Bildung im Bereich Software Engineering oder \ac{IoT} gelegt wird. Vielmehr handelt es sich bei flowws um ein Entwicklungswerkezug, welches aktiv zur Erprobung und Entwicklung von \ac{IoT}-Prototypen dienen soll.
 
 \section{Aufbau der Arbeit}\label{sec:1_aufbau}
 \begin{itemize}

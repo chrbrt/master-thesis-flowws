@@ -58,7 +58,7 @@ Jeder Aktor-cBlock, der mit flowws verbunden wird, ist ähnlich wie bei den Sens
   \centering
   \includegraphics[width=1\textwidth]{bilder/chapter4/chapter4_2/aktorblockablauf.pdf}
   \caption{Standardablauf innerhalb eines Aktorknotens, wenn eine Input-Schnittstelle aktualisiert wird.}
-  \label{fig:seqfunktionsblock}
+  \label{fig:seqaktorblock}
 \end{figure}
 
 Jeder Aktorknoten besitzt zusätzlich zu seiner \ac{FSM} zwei weitere Komponenten:
@@ -67,7 +67,7 @@ Jeder Aktorknoten besitzt zusätzlich zu seiner \ac{FSM} zwei weitere Komponente
     \item \textbf{Aktorfunktionen} sind der einzige Weg innerhalb von flowws, Aktoreigenschaften direkt zu manipulieren. Jeder Aktorknoten wird mit einem Menge von Funktionen geliefert. Diese bestehen aus Funktionen wie \texttt{setColor()}, \texttt{setBrightness()}, \texttt{setFrequency()}, etc; und ermöglichen dem Endnutzer den Aktor durch geschickte Modellierung der Übergangslogik zu manipulieren. Anders als die Aktoreigenschaften besitzen Experten die Möglichkeit, zusätzliche Funktionen hinzufügen und somit die Flexibilität von Aktoren bei der Manipulation ihrer Eigenschaften erhöhen.
 \end{itemize}
 
-In Abbildung \ref{fig:seqfunktionsblock} ist der Ablauf zu sehen, der Durchgeführt wird, sobald ein neues Ereignis eintrifft. Zuerst ermittelt der Aktorknoten mit welchem Übergang die aktualisierte Input-Schnittstelle korrespondiert. Als Nächstes wird überprüft ob der Übergang erlaubt ist abhängig von dem Zustand, indem sich der Aktorknoten momentan befindet. Ist dies der Fall, wird die Übergangslogik ausgeführt und abhängig davon, des Events und der Aktorfunktionen die Eigenschaften des Aktors verändert. Durch die Veränderung der Aktoreigenschaften wird ein physikalisches Signal erzeugt. Ebenso kann ein neues Signal erzeugt werden und über eine Output-Schnittsstelle, welches ebenfalls mit der Übergangslogik korrespondiert, versendet werden. Ein Aktorknoten ist somit mehr als nur ein Konsument; er kann wie ein Sensorknoten neue Signale erzeugen, welche wiederum transformiert und von weiteren Aktorknotens konsumiert werden können.
+In Abbildung \ref{fig:seqaktorblock} ist der Ablauf zu sehen, der Durchgeführt wird, sobald ein neues Ereignis eintrifft. Zuerst ermittelt der Aktorknoten mit welchem Übergang die aktualisierte Input-Schnittstelle korrespondiert. Als Nächstes wird überprüft ob der Übergang erlaubt ist abhängig von dem Zustand, indem sich der Aktorknoten momentan befindet. Ist dies der Fall, wird die Übergangslogik ausgeführt und abhängig davon, des Events und der Aktorfunktionen die Eigenschaften des Aktors verändert. Durch die Veränderung der Aktoreigenschaften wird ein physikalisches Signal erzeugt. Ebenso kann ein neues Signal erzeugt werden und über eine Output-Schnittsstelle, welches ebenfalls mit der Übergangslogik korrespondiert, versendet werden. Ein Aktorknoten ist somit mehr als nur ein Konsument; er kann wie ein Sensorknoten neue Signale erzeugen, welche wiederum transformiert und von weiteren Aktorknotens konsumiert werden können.
 
 \subsubsection{Zusammenfassung}
 Hiermit wurde das Programmiermodell von flowws geklärt, eine Fusion von \ac{DBP} und \ac{FSM}. Es handelt sich hierbei um eine neues Programmiermodell, welches noch nicht innerhalb eines \ac{EUD}-Werkzeugs verwendet wurde. Aus diesem Grund, kann noch keine objektive Aussage über die Effektivität des Modells hinsichtlich Benutzerfreundlichkeit gemacht werden. Nichtsdestotrotz kann man die erhofften Vorteile logisch schlussfolgern:
