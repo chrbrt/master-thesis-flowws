@@ -1,10 +1,10 @@
-\section{Programmiermodel}
+\section{Programmiermodell}
 In diesem Kapitel wird sich der Konzeption eines Programmiermodells auf Basis der Anforderungen (insbesondere \hyperref[tab:NFA0]{NFA\#0}) und der Entscheidungen aus dem vorhergegangenen Kapitel erstellt.
 
 \subsection{Datenfluss-basierte Programmierung}\label{subsection:datenflussprog}
-Prototypen, die mit cBlocks entwickelt werden essentiell ein Netzwerk von Sensoren, welche Daten versenden, diese in eine nutzbare Form verwandeln und von Aktoren konsumiert werden. Sie verhalten sich so, wie die in Kapitel \ref{subsec:characIot} beschriebenen \acp{WSAN}. Diese Form von Signal-Kommunikation ist ähnlich derer von \ac{DBP}. Die Definition  laut \cite{sousa2012dataflow} von \ac{DBP} ist:
+Prototypen, die mit cBlocks entwickelt werden sollen, sind Netzwerke von Sensoren, welche Daten versenden, diese in eine nutzbare Form verwandeln und von Aktoren konsumiert werden. Sie verhalten sich so, wie die in Kapitel \ref{subsec:characIot} beschriebenen \acp{WSAN}. Diese Form von Signal-Kommunikation ist ähnlich der von \ac{DBP}. Die Definition  laut \cite{sousa2012dataflow} von \ac{DBP} ist:
 \begin{quote}
-    ''\textit{Die Programmierung anhand von Datenflüssen führt ein ein neues Paradigma ein, bei dem die interne Struktur eines Programmes mit einem gerichteten Graphen repräsentiert wird, ähnlich wie bei einem Datenflussdiagramm.} ''
+    "`\textit{Die Programmierung anhand von Datenflüssen führt ein neues Paradigma ein, bei dem die interne Struktur eines Programmes mit einem gerichteten Graphen repräsentiert wird, ähnlich wie bei einem Datenflussdiagramm.} "'
 \end{quote}
 
 \begin{figure}[h]
@@ -26,7 +26,7 @@ Prototypen, die mit cBlocks entwickelt werden essentiell ein Netzwerk von Sensor
 \end{figure}
 
 
-Ein solches Programm wird in Abbildung \ref{fig:bfd} veranschaulicht. In dem konkreten Graphen handelt es sich um ein typisches Szenario, wie es mit flowws modelliert werden kann. Der Kontrollfluss-basierte Pseudocode zum selben Programm ist daneben zu sehen. In der Darstellung können vier verschiedene Elemente ausgemacht werden, die den Datenflussgraphen ausmachen. Die einzelnen Elemente, die mit dem Domänenmodel (Abbildung \ref{fig:bfddomainmodel}) korrespondieren sind:
+Ein solches Programm wird in Abbildung \ref{fig:bfd} veranschaulicht. In dem konkreten Graphen handelt es sich um ein typisches Szenario, wie es mit flowws modelliert werden kann. Der Kontrollfluss-basierte Pseudocode zum selben Programm ist daneben zu sehen. In der Darstellung können vier verschiedene Elemente ausgemacht werden, die den Datenflussgraphen ausmachen. Die einzelnen Elemente, die mit dem Domänenmodell (Abbildung \ref{fig:bfddomainmodel}) korrespondieren sind:
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.95\textwidth]{bilder/chapter4/chapter4_2/domainmodelldatenfluss2.pdf}
@@ -34,24 +34,24 @@ Ein solches Programm wird in Abbildung \ref{fig:bfd} veranschaulicht. In dem kon
   \label{fig:bfddomainmodel}
 \end{figure}
 \begin{itemize}
-    \item \textbf{Quellen} erzeugen die zu verarbeitenden Daten. Innerhalb von flowws bzw. cBlocks Netzwerken werden (virtuelle) Konstanten und (physische) Sensoren als datenerzeugendende Quellen angesehen. 
-    \item \textbf{Funktionsknoten/Transducer} verarbeitenden Daten. Jeder Funktionsblock ist eine \textit{Black Box}, die aus einer Anzahl von Input-/Output-Schnittstellen und einer Verarbeitungslogik bestehen. Die Verarbeitungslogik wird im Falle von flowws von den funktionellen Anforderungen FA\#1 bis FA\#6 (Kapitel \ref{subsec:fanf}) vorgegeben. Nicht nur die Transformationen von Daten sondern auch temporale Operationen wie die zeitliche Verzögerung eines Signals werden in diesen Knoten abgearbeitet. 
+    \item \textbf{Quellen} erzeugen die zu verarbeiten Daten. Innerhalb von flowws bzw. cBlocks Netzwerken werden (virtuelle) Konstanten und (physische) Sensoren als datenerzeugendende Quellen angesehen. 
+    \item \textbf{Funktionsknoten/Transducer} verarbeitenden Daten. Jeder Funktionsblock ist eine \textit{Black Box}, die aus einer Anzahl von Input-/Output-Schnittstellen und einer Verarbeitungslogik bestehen. Die Verarbeitungslogik wird im Falle von flowws von den Anforderungen \hyperref[tab:fanf]{FA\#1} bis \hyperref[tab:fanf]{FA\#6} (siehe Kapitel \ref{subsec:fanf}) vorgegeben. Nicht nur die Transformationen von Daten, sondern auch temporale Operationen, wie die zeitliche Verzögerung eines Signals werden in diesen Knoten abgearbeitet. 
     \item \textbf{Senken} konsumieren die erzeugten/verarbeitenden Daten. Innerhalb von flowws bzw. cBlocks Netzwerken übernehmen (virtuelle) Schnittstellen zu (physischen) Aktoren diese Aufgabe. Sie verwenden die erzeugten Daten, um ein bestimmtes Verhalten in Aktoren innerhalb des Systems herbeizuführen.
     \item \textbf{Verbindungen} transferieren Signale bzw. Nachrichten zwischen den Knotenpunkten. Sie definieren die eins-zu-eins Verbindung zwischen den Input/Output-Schnittstellen der Funktionsblöcke. Diese Verbindung ist gerichtet d.h. Daten fließen immer nur in eine Richtung durch den Graphen.
-    \item \textbf{Ereignisse} sind Nachrichten, die durchd en Graphen von Node zu Node fließen. Sie beinhalten neben einem \textit{Payload}, der die eigentlichen Daten besitzt, auf dem die Transformationen durchgeführt werden, noch zusätzliche Metainformationen, die für die Bearbeitung der Daten wichtig sind. Die Datentypen, die der \textit{Payload} in besitzen kann wird von cBlocks-Ökosystem festgelegt und kann in Tabelle \ref{tab:datentypenpayloads} nachgeschlagen werden.
+    \item \textbf{Ereignisse} sind Nachrichten, die durch den Graphen von Knoten zu Knoten fließen. Sie beinhalten neben einem \textit{Payload}, der die eigentlichen Daten besitzt, auf dem die Transformationen durchgeführt werden, noch zusätzliche Metainformationen, die für die Bearbeitung der Daten wichtig sind. Die Datentypen, die der \textit{Payload} in besitzen kann wird von cBlocks-Ökosystem festgelegt und kann in Tabelle \ref{tab:datentypenpayloads} nachgeschlagen werden.
 \end{itemize}
 
- \begin{table}[h]
-\caption{Die drei verschiedenen Datentypen von Ereignis-\textit{Payloads}, die innerhalb von flowws verwendet werden.}
-\label{tab:datentypenpayloads}
+\begin{table}[h]
 \begin{tabularx}{\textwidth}{llXX}
 \hline
 \rowcolor[HTML]{EFEFEF} 
 Datentyp & Beispiel &  Erläuterung &  Verwendung \\ \hline
-Number & 0,1,2,3.43,-12...& nummerischer Wert (Ganzzahlig und Fließkomma) & Temperatur, Abstand, Helligkeit, ...   \\ \hline
+Number & 0,1,2,3.43,-12...& nummerischer Wert (Ganzzahlig und Gleitkomma) & Temperatur, Abstand, Helligkeit, ...   \\ \hline
 String & "qwnTZ32" & beliebige Zeichenkette & RFID-Code, Farbcodes, Display-Text, ... \\ \hline
 Boolean & true, false & Wahrheitswert & Taster, Relays, ... \\ \hline
 \end{tabularx}
+\caption{Die drei verschiedenen Datentypen von Ereignis-\textit{Payloads}, die innerhalb von flowws verwendet werden.}
+\label{tab:datentypenpayloads}
 \end{table}
 
-\ac{DBP} erlaubt es effizient die Komplexität von parallelen \textit{Events} zu modellieren und auch für nicht Experten zu visualisieren. Dies ist somit ein guter Ansatz um die Anforderungen \hyperref[tab:NFA2]{NFA\#2} und \hyperref[tab:NFA0]{NFA\#0} zu bewältigen. Um \hyperref[tab:NFA0]{NFA\#0} allerdings komplett zu erfüllen, muss ein weiterer Sachverhalt adressiert werden: das modellieren sequentieller Logik, wie sie in Problem ''Parallel contra Sequentiell'' beschrieben und in  \hyperref[szenario2]{Szenario \#2} verdeutlicht ist.
+\ac{DBP} erlaubt es effizient die Komplexität von parallelen \textit{Events} zu modellieren und auch für nicht Experten zu visualisieren. Dies ist somit ein guter Ansatz um den Anforderungen \hyperref[tab:NFA2]{NFA\#2} und \hyperref[tab:NFA0]{NFA\#0} zu gerecht zu werden. Um \hyperref[tab:NFA0]{NFA\#0} allerdings komplett zu erfüllen, muss ein weiterer Sachverhalt adressiert werden: das Modellieren sequentieller Logik, wie sie in Problem "`Parallel contra Sequentiell"' beschrieben und in  \hyperref[szenario2]{Szenario \#2} (siehe Kapitel \ref{sec:szenarien}) verdeutlicht ist.
